@@ -157,7 +157,7 @@ export default function Header() {
             <SupportAgentIcon fontSize="large" />
             <span className="leading-5 flex items-center flex-col">
               <span className="text-green-400 text-[24px] font-semibold block tracking-wider 	">
-              1900 - 888
+                1900 - 888
               </span>
               <span className="text-[14px]">24/7 Support Center</span>
             </span>

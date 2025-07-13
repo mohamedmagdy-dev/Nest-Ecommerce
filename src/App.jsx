@@ -7,12 +7,12 @@ import Compare from "./pages/Compare";
 import WhishList from "./pages/WishList";
 import Cart from "./pages/Cart";
 import MyAccount from "./pages/MyAccount";
+// IMport React Router
 import { Route, Routes } from "react-router-dom";
 
-// IMport React Router
 export default function App() {
   return (
-    < >
+    <>
       <Header />
       {/* Start Routes */}
       <Routes>
