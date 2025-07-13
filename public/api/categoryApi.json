@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "id": 2,
+      "name": "Milks and Dairies",
+      "icon": "/assets/category-icons/milks-and-dairies.svg"
+    },
+    { "id": 3, "name": "Drinks", "icon": "/assets/category-icons/Drinks.svg" },
+    {
+      "id": 4,
+      "name": "Clothing & Beauty",
+      "icon": "/assets/category-icons/clothing-and-beauty.svg"
+    },
+    {
+      "id": 5,
+      "name": "Pet Foods & Toy",
+      "icon": "/assets/category-icons/pet-foods-and-toy.svg"
+    },
+    {
+      "id": 6,
+      "name": "Fast food",
+      "icon": "/assets/category-icons/fast-food.svg"
+    },
+    {
+      "id": 7,
+      "name": "Baking material",
+      "icon": "/assets/category-icons/baking-material.svg"
+    },
+    {
+      "id": 8,
+      "name": "Vegetables",
+      "icon": "/assets/category-icons/vegetables.svg"
+    },
+    {
+      "id": 9,
+      "name": "Fresh Seafood",
+      "icon": "/assets/category-icons/fresh-seafood.svg"
+    }
+  ]
+}
