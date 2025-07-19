@@ -13,6 +13,7 @@ const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
     items: [],
+    featuredCategories: [],
     isLoading: false,
     error: null,
   },
@@ -23,6 +24,7 @@ const categoriesSlice = createSlice({
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
       state.isLoading = false;
       state.items = action.payload.categories;
+      state.featuredCategories = action.payload.featuredCategories;
     });
     builder.addCase(fetchCategories.rejected, (state, action) => {
       state.isLoading = false;

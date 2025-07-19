@@ -1,5 +1,7 @@
 // Components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 // Pages
 import Home from "./pages/Home";
 import Deals from "./pages/Deals";
@@ -24,7 +26,8 @@ export default function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/MyAccount" element={<MyAccount />} />
       </Routes>
-      {/* <Footer /> */}
+      {/* End Routes */}
+      <Footer />
     </>
   );
 }

@@ -252,6 +252,7 @@ export default function Header() {
             <ul
               ref={categoriesMenu}
               className={`
+                z-20
                 rounded border
                 transition-all duration-200 linear
                 transform ${

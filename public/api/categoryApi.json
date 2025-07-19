@@ -36,5 +36,85 @@
       "name": "Fresh Seafood",
       "icon": "/assets/category-icons/fresh-seafood.svg"
     }
+  ],
+
+  "featuredCategories": [
+    {
+      "id": 1,
+      "name": "Cake & Milk",
+      "icon": "/assets/Featured Categories/cat-13.png",
+      "items_count": 26,
+      "bg_color": "#FFF6E6"
+    },
+    {
+      "id": 2,
+      "name": "Organic Kiwi",
+      "icon": "/assets/Featured Categories/cat-12.png",
+      "items_count": 28,
+      "bg_color": "#E4F4E8"
+    },
+    {
+      "id": 3,
+      "name": "Peach",
+      "icon": "/assets/Featured Categories/cat-11.png",
+      "items_count": 14,
+      "bg_color": "#FFE9E9"
+    },
+    {
+      "id": 4,
+      "name": "Red Apple",
+      "icon": "/assets/Featured Categories/cat-9.png",
+      "items_count": 54,
+      "bg_color": "#FFE6E6"
+    },
+    {
+      "id": 5,
+      "name": "Snack",
+      "icon": "/assets/Featured Categories/cat-3.png",
+      "items_count": 56,
+      "bg_color": "#F0F7FF"
+    },
+    {
+      "id": 6,
+      "name": "Vegetables",
+      "icon": "/assets/Featured Categories/cat-1.png",
+      "items_count": 72,
+      "bg_color": "#E8F8EA"
+    },
+    {
+      "id": 7,
+      "name": "Strawberry",
+      "icon": "/assets/Featured Categories/cat-2.png",
+      "items_count": 36,
+      "bg_color": "#FFF0F0"
+    },
+    {
+      "id": 8,
+      "name": "Black plum",
+      "icon": "/assets/Featured Categories/cat-4.png",
+      "items_count": 123,
+      "bg_color": "#F5E6FF"
+    },
+    {
+      "id": 9,
+      "name": "Custard apple",
+      "icon": "/assets/Featured Categories/cat-5.png",
+      "items_count": 34,
+      "bg_color": "#FFF8E1"
+    },
+    {
+      "id": 10,
+      "name": "Coffee & Tea",
+      "icon": "/assets/Featured Categories/cat-14.png",
+      "items_count": 89,
+      "bg_color": "#F2E6D9"
+    },
+    {
+      "id": 11,
+      "name": "Headphone",
+      "icon": "/assets/Featured Categories/cat-15.png",
+      "items_count": 87,
+      "bg_color": "#E6F0FF"
+    }
   ]
 }

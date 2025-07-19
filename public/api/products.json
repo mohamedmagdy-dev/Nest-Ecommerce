@@ -1,0 +1,364 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Fresh Organic Tomatoes",
+      "price": 2.99,
+      "oldPrice": 3.49,
+      "stat": "Hot",
+      "rate": 4.7,
+      "stock": 150,
+      "sold": 320,
+      "category": "Vegetables",
+      "seller": "Fresh Farms",
+      "images": ["product-1-1.jpg", "product-1-2.jpg"]
+    },
+    {
+      "id": 2,
+      "title": "Organic Bananas (1 lb)",
+      "price": 0.79,
+      "stat": "New",
+      "rate": 4.5,
+      "stock": 200,
+      "sold": 450,
+      "category": "Fruits",
+      "seller": "Tropical Fruits Co.",
+      "images": ["product-2-1.jpg", "product-2-2.jpg"]
+    },
+    {
+      "id": 3,
+      "title": "Canned Green Beans",
+      "price": 1.29,
+      "oldPrice": 1.49,
+      "stat": "Sale",
+      "rate": 4.2,
+      "stock": 85,
+      "sold": 210,
+      "category": "Milks & Dairies",
+      "seller": "Valley Farms",
+      "images": ["product-3-1.jpg", "product-3-2.jpg"]
+    },
+    {
+      "id": 4,
+      "title": "Organic Strawberries (16 oz)",
+      "price": 4.99,
+      "stat": "Hot",
+      "rate": 1.8,
+      "stock": 75,
+      "sold": 180,
+      "category": "Fruits",
+      "seller": "Berry Best",
+      "images": ["product-4-1.jpg", "product-4-2.jpg"]
+    },
+    {
+      "id": 5,
+      "title": "Canned Corn (14.5 oz)",
+      "price": 0.99,
+      "stat": "",
+      "rate": 4.3,
+      "stock": 120,
+      "sold": 340,
+      "category": "Milks & Dairies",
+      "seller": "Golden Harvest",
+      "images": ["product-5-1.jpg", "product-5-2.jpg"]
+    },
+    {
+      "id": 6,
+      "title": "Organic Spinach (10 oz)",
+      "price": 3.49,
+      "oldPrice": 3.99,
+      "stat": "New",
+      "rate": 4.6,
+      "stock": 90,
+      "sold": 210,
+      "category": "Vegetables",
+      "seller": "Green Leaf Farms",
+      "images": ["product-6-1.jpg", "product-6-2.jpg"]
+    },
+    {
+      "id": 7,
+      "title": "Canned Tomato Sauce (15 oz)",
+      "price": 1.19,
+      "stat": "Sale",
+      "rate": 4.4,
+      "stock": 110,
+      "sold": 290,
+      "category": "Milks & Dairies",
+      "seller": "Italian Kitchen",
+      "images": ["product-7-1.jpg", "product-7-2.jpg"]
+    },
+    {
+      "id": 8,
+      "title": "Organic Apples (3 lb bag)",
+      "price": 4.49,
+      "oldPrice": 4.99,
+      "stat": "Hot",
+      "rate": 4.7,
+      "stock": 65,
+      "sold": 150,
+      "category": "Fruits",
+      "seller": "Orchard Fresh",
+      "images": ["product-8-1.jpg", "product-8-2.jpg"]
+    },
+    {
+      "id": 9,
+      "title": "Canned Pineapple Slices (20 oz)",
+      "price": 2.29,
+      "stat": "Save",
+      "rate": 4.5,
+      "stock": 80,
+      "sold": 190,
+      "category": "Milks & Dairies",
+      "seller": "Tropical Delight",
+      "images": ["product-9-1.jpg", "product-9-2.jpg"]
+    },
+    {
+      "id": 10,
+      "title": "Organic Carrots (1 lb)",
+      "price": 1.49,
+      "stat": "New",
+      "rate": 4.3,
+      "stock": 130,
+      "sold": 240,
+      "category": "Vegetables",
+      "seller": "Root Vegetables Co.",
+      "images": ["product-10-1.jpg", "product-10-2.jpg"]
+    },
+    {
+      "id": 11,
+      "title": "Canned Chickpeas (15 oz)",
+      "price": 1.09,
+      "oldPrice": 1.29,
+      "stat": "Sale",
+      "rate": 4.4,
+      "stock": 95,
+      "sold": 270,
+      "category": "Milks & Dairies",
+      "seller": "Mediterranean Foods",
+      "images": ["product-11-1.jpg", "product-11-2.jpg"]
+    },
+    {
+      "id": 12,
+      "title": "Organic Blueberries (6 oz)",
+      "price": 3.99,
+      "stat": "Hot",
+      "rate": 4.8,
+      "stock": 60,
+      "sold": 170,
+      "category": "Fruits",
+      "seller": "Berry Best",
+      "images": ["product-12-1.jpg", "product-12-2.jpg"]
+    },
+    {
+      "id": 13,
+      "title": "Canned Mushrooms (8 oz)",
+      "price": 1.79,
+      "stat": "Save",
+      "rate": 4.1,
+      "stock": 70,
+      "sold": 150,
+      "category": "Milks & Dairies",
+      "seller": "Forest Harvest",
+      "images": ["product-13-1.jpg", "product-13-2.jpg"]
+    },
+    {
+      "id": 14,
+      "title": "Organic Bell Peppers (3-pack)",
+      "price": 3.49,
+      "oldPrice": 3.99,
+      "stat": "New",
+      "rate": 4.6,
+      "stock": 55,
+      "sold": 120,
+      "category": "Vegetables",
+      "seller": "Colorful Harvest",
+      "images": ["product-14-1.jpg", "product-14-2.jpg"]
+    },
+    {
+      "id": 15,
+      "title": "Canned Peaches (15 oz)",
+      "price": 1.99,
+      "stat": "Sale",
+      "rate": 4.3,
+      "stock": 85,
+      "sold": 210,
+      "category": "Milks & Dairies",
+      "seller": "Sunny Valley",
+      "images": ["product-15-1.jpg", "product-15-2.jpg"]
+    },
+    {
+      "id": 16,
+      "title": "Organic Avocados (4-pack)",
+      "price": 5.99,
+      "stat": "Hot",
+      "rate": 4.7,
+      "stock": 40,
+      "sold": 180,
+      "category": "Fruits",
+      "seller": "Creamy Delights",
+      "images": ["product-16-1.jpg", "product-16-2.jpg"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Top Rated",
+      "products": [
+        {
+          "id": 1,
+          "title": "Fresh Organic Tomatoes",
+          "price": 2.99,
+          "rate": 4.7,
+          "image": "product-1-1.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Organic Strawberries (16 oz)",
+          "price": 4.99,
+          "rate": 4.8,
+          "image": "product-4-1.jpg"
+        },
+        {
+          "id": 5,
+          "title": "Canned Corn (14.5 oz)",
+          "price": 0.99,
+          "rate": 4.3,
+          "image": "product-5-1.jpg"
+        },
+        {
+          "id": 8,
+          "title": "Organic Apples (3 lb bag)",
+          "price": 4.49,
+          "rate": 4.7,
+          "image": "product-8-1.jpg"
+        },
+        {
+          "id": 12,
+          "title": "Organic Blueberries (6 oz)",
+          "price": 3.99,
+          "rate": 4.8,
+          "image": "product-12-1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Top Selling",
+      "products": [
+        {
+          "id": 1,
+          "title": "Fresh Organic Tomatoes",
+          "price": 2.99,
+          "sold": 320,
+          "image": "product-1-1.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Organic Bananas (1 lb)",
+          "price": 0.79,
+          "sold": 450,
+          "image": "product-2-1.jpg"
+        },
+        {
+          "id": 5,
+          "title": "Canned Corn (14.5 oz)",
+          "price": 0.99,
+          "sold": 340,
+          "image": "product-5-1.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Organic Spinach (10 oz)",
+          "price": 3.49,
+          "sold": 210,
+          "image": "product-6-1.jpg"
+        },
+        {
+          "id": 11,
+          "title": "Canned Chickpeas (15 oz)",
+          "price": 1.09,
+          "sold": 270,
+          "image": "product-11-1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Trending Products",
+      "products": [
+        {
+          "id": 4,
+          "title": "Organic Strawberries (16 oz)",
+          "price": 4.99,
+          "stat": "Hot",
+          "image": "product-4-1.jpg"
+        },
+        {
+          "id": 8,
+          "title": "Organic Apples (3 lb bag)",
+          "price": 4.49,
+          "stat": "Hot",
+          "image": "product-8-1.jpg"
+        },
+        {
+          "id": 12,
+          "title": "Organic Blueberries (6 oz)",
+          "price": 3.99,
+          "stat": "Hot",
+          "image": "product-12-1.jpg"
+        },
+        {
+          "id": 16,
+          "title": "Organic Avocados (4-pack)",
+          "price": 5.99,
+          "stat": "Hot",
+          "image": "product-16-1.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Canned Green Beans",
+          "price": 1.29,
+          "stat": "Sale",
+          "image": "product-3-1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Recently Added",
+      "products": [
+        {
+          "id": 2,
+          "title": "Organic Bananas (1 lb)",
+          "price": 0.79,
+          "stat": "New",
+          "image": "product-2-1.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Organic Spinach (10 oz)",
+          "price": 3.49,
+          "stat": "New",
+          "image": "product-6-1.jpg"
+        },
+        {
+          "id": 10,
+          "title": "Organic Carrots (1 lb)",
+          "price": 1.49,
+          "stat": "New",
+          "image": "product-10-1.jpg"
+        },
+        {
+          "id": 14,
+          "title": "Organic Bell Peppers (3-pack)",
+          "price": 3.49,
+          "stat": "New",
+          "image": "product-14-1.jpg"
+        },
+        {
+          "id": 15,
+          "title": "Canned Peaches (15 oz)",
+          "price": 1.99,
+          "stat": "Sale",
+          "image": "product-15-1.jpg"
+        }
+      ]
+    }
+  ]
+}

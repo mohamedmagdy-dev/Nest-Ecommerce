@@ -1,22 +1,33 @@
+// Import Image
 import Logo from "../assets/logo.svg";
-
+// Import Component
+import Social from "./Social";
 // Import Icons mui
 import CloseIcon from "@mui/icons-material/Close";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import PersonIcon from "@mui/icons-material/Person";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import XIcon from "@mui/icons-material/X";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 import SearchIcon from "@mui/icons-material/Search";
 // React Router
 import { Link } from "react-router-dom";
+// Import React
+import { useEffect } from "react";
 
 export default function MobileMenu(props) {
+  // Too stop Scroll The Page when Menu Opened
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (props.style.includes("translate-x-[0%]") && isMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => (document.body.style.overflow = "auto");
+  }, [props.style]);
+
   return (
     <div
-      className={`mobile-menu p-4 absolute z-30 top-0 left-0 min-h-screen w-screen md:w-fit transform transition-all duration-200 bg-white ${props.style} shadow-lg`}
+      className={`lg:hidden mobile-menu overflow-y-scroll p-4 fixed z-30 top-0 left-0 h-screen w-screen md:w-fit transform transition-all duration-200 bg-white ${props.style} shadow-lg`}
     >
       <div className="flex justify-between items-center border-b border-gray-200 pb-4 ">
         <img src={Logo} alt="Nest Logo" />
@@ -52,20 +63,7 @@ export default function MobileMenu(props) {
           (+01) - 2345 - 6789
         </a>
       </div>
-      <div className="social flex gap-3 mb-6">
-        <span className=" w-7 h-7 rounded-full flex justify-center items-center bg-green-500 text-white">
-          <FacebookIcon fontSize="small" />
-        </span>
-        <span className=" w-7 h-7 rounded-full flex justify-center items-center bg-green-500 text-white">
-          <XIcon fontSize="small" />
-        </span>
-        <span className=" w-7 h-7 rounded-full flex justify-center items-center bg-green-500 text-white">
-          <InstagramIcon fontSize="small" />
-        </span>
-        <span className=" w-7 h-7 rounded-full flex justify-center items-center bg-green-500 text-white">
-          <YouTubeIcon fontSize="small" />
-        </span>
-      </div>
+      <Social style="mb-6" />
       <p className="pb-6">
         Copyright {new Date().getFullYear()} © Nest. All rights reserved.
         Powered by Not Me (:

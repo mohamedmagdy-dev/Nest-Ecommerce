@@ -1,0 +1,14 @@
+/* Edit Slider Bullets Color */
+.swiper-pagination-bullet {
+  background-color: #10b981 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #10b981 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 15px !important;
+}
