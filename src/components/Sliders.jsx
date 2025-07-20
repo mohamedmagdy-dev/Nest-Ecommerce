@@ -6,7 +6,8 @@ import { useEffect } from "react";
 
 // import Swiper JS
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,6 +20,24 @@ import Slider2Image from "../assets/slider-2.png";
 import EmailIcon from "@mui/icons-material/Email";
 
 import { SectionTitle } from "./Filter";
+
+const shownItemsCount = {
+  320: {
+    slidesPerView: 2,
+  },
+  640: {
+    slidesPerView: 4,
+  },
+  768: {
+    slidesPerView: 5,
+  },
+  1024: {
+    slidesPerView: 6,
+  },
+  1280: {
+    slidesPerView: 8,
+  },
+};
 
 export default function NewsLetterSlider() {
   return (
@@ -92,23 +111,6 @@ export default function NewsLetterSlider() {
 }
 
 export function FeaturedCategories() {
-  const shownItemsCount = {
-    320: {
-      slidesPerView: 2,
-    },
-    640: {
-      slidesPerView: 4,
-    },
-    768: {
-      slidesPerView: 5,
-    },
-    1024: {
-      slidesPerView: 6,
-    },
-    1280: {
-      slidesPerView: 8,
-    },
-  };
   const dispatch = useDispatch();
   const { featuredCategories, isLoading, error } = useSelector(
     (state) => state.categories
@@ -151,5 +153,40 @@ export function FeaturedCategories() {
         {createCategories()}
       </Swiper>
     </div>
+  );
+}
+
+export function DailyBestSellsSlider(props) {
+  return (
+    <Swiper
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+      }}
+      modules={[Autoplay]}
+      autoplay={{
+        delay: 2000, 
+        disableOnInteraction: false, 
+      }}
+      spaceBetween={25}
+      loop={true}
+      grabCursor={true}
+      className="select-none"
+    >
+      {props.products}
+    </Swiper>
   );
 }

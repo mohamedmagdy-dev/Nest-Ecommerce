@@ -75,7 +75,7 @@ export default function Product(props) {
     <div
       onMouseEnter={() => setImgIndex(1)}
       onMouseLeave={() => setImgIndex(0)}
-      className={`product flex flex-col All relative justify-between ${props.category} rounded-xl border border-gray-300 duration-200 hover:border-green-300 hover:shadow-md p-5`}
+      className={`product flex flex-col All relative justify-between ${props.category} rounded-xl border min-h-full border-gray-300 duration-200 hover:border-green-300 hover:shadow-md p-5`}
     >
       <span
         className="absolute text-white flex w-15 h-7 items-center justify-center rounded-br-xl rounded-tl-xl top-0 left-0 text-sm z-10"
