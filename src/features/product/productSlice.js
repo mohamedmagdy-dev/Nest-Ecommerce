@@ -14,6 +14,7 @@ const productsSlice = createSlice({
   initialState: {
     products: [],
     categories: [],
+    offers: [],
     isLoading: false,
     error: null,
   },
@@ -25,6 +26,7 @@ const productsSlice = createSlice({
       state.isLoading = false;
       state.products = action.payload.products;
       state.categories = action.payload.categories;
+      state.offers = action.payload.offers;
     });
     builder.addCase(fetchProducts.rejected, (state, action) => {
       state.isLoading = false;

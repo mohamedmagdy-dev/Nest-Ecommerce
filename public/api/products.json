@@ -207,36 +207,41 @@
           "id": 1,
           "title": "Fresh Organic Tomatoes",
           "price": 2.99,
+          "oldPrice": 3.49,
           "rate": 4.7,
-          "image": "product-1-1.jpg"
+          "image": "thumbnail-1.jpg"
         },
         {
           "id": 4,
-          "title": "Organic Strawberries (16 oz)",
+          "title": "Organic Strawberries ",
           "price": 4.99,
+          "oldPrice": 5.79,
           "rate": 4.8,
-          "image": "product-4-1.jpg"
+          "image": "thumbnail-4.jpg"
         },
         {
           "id": 5,
           "title": "Canned Corn (14.5 oz)",
           "price": 0.99,
+          "oldPrice": 1.39,
           "rate": 4.3,
-          "image": "product-5-1.jpg"
+          "image": "thumbnail-5.jpg"
         },
         {
           "id": 8,
           "title": "Organic Apples (3 lb bag)",
           "price": 4.49,
+          "oldPrice": 5.19,
           "rate": 4.7,
-          "image": "product-8-1.jpg"
+          "image": "thumbnail-8.jpg"
         },
         {
           "id": 12,
           "title": "Organic Blueberries (6 oz)",
           "price": 3.99,
+          "oldPrice": 4.49,
           "rate": 4.8,
-          "image": "product-12-1.jpg"
+          "image": "thumbnail-12.jpg"
         }
       ]
     },
@@ -247,36 +252,46 @@
           "id": 1,
           "title": "Fresh Organic Tomatoes",
           "price": 2.99,
+          "oldPrice": 3.29,
           "sold": 320,
-          "image": "product-1-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-1.jpg"
         },
         {
           "id": 2,
-          "title": "Organic Bananas (1 lb)",
+          "title": "Organic Bananas ",
           "price": 0.79,
+          "oldPrice": 1.19,
           "sold": 450,
-          "image": "product-2-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-2.jpg"
         },
         {
           "id": 5,
           "title": "Canned Corn (14.5 oz)",
           "price": 0.99,
+          "oldPrice": 1.29,
           "sold": 340,
-          "image": "product-5-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-5.jpg"
         },
         {
           "id": 6,
           "title": "Organic Spinach (10 oz)",
           "price": 3.49,
+          "oldPrice": 4.09,
           "sold": 210,
-          "image": "product-6-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-6.jpg"
         },
         {
           "id": 11,
           "title": "Canned Chickpeas (15 oz)",
           "price": 1.09,
+          "oldPrice": 1.49,
           "sold": 270,
-          "image": "product-11-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-11.jpg"
         }
       ]
     },
@@ -285,38 +300,48 @@
       "products": [
         {
           "id": 4,
-          "title": "Organic Strawberries (16 oz)",
+          "title": "Organic Strawberries ",
           "price": 4.99,
+          "oldPrice": 5.69,
           "stat": "Hot",
-          "image": "product-4-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-4.jpg"
         },
         {
           "id": 8,
           "title": "Organic Apples (3 lb bag)",
           "price": 4.49,
+          "oldPrice": 5.09,
           "stat": "Hot",
-          "image": "product-8-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-8.jpg"
         },
         {
           "id": 12,
           "title": "Organic Blueberries (6 oz)",
           "price": 3.99,
+          "oldPrice": 4.59,
           "stat": "Hot",
-          "image": "product-12-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-12.jpg"
         },
         {
           "id": 16,
           "title": "Organic Avocados (4-pack)",
           "price": 5.99,
+          "oldPrice": 6.59,
           "stat": "Hot",
-          "image": "product-16-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-1.jpg"
         },
         {
           "id": 3,
           "title": "Canned Green Beans",
           "price": 1.29,
+          "oldPrice": 1.79,
           "stat": "Sale",
-          "image": "product-3-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-3.jpg"
         }
       ]
     },
@@ -327,38 +352,96 @@
           "id": 2,
           "title": "Organic Bananas (1 lb)",
           "price": 0.79,
+          "oldPrice": 1.29,
           "stat": "New",
-          "image": "product-2-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-2.jpg"
         },
         {
           "id": 6,
           "title": "Organic Spinach (10 oz)",
           "price": 3.49,
+          "oldPrice": 3.99,
           "stat": "New",
-          "image": "product-6-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-6.jpg"
         },
         {
           "id": 10,
           "title": "Organic Carrots (1 lb)",
           "price": 1.49,
+          "oldPrice": 1.99,
           "stat": "New",
-          "image": "product-10-1.jpg"
+          "rate": 4.5,
+          "image": "thumbnail-10.jpg"
         },
         {
           "id": 14,
           "title": "Organic Bell Peppers (3-pack)",
           "price": 3.49,
+          "oldPrice": 3.99,
           "stat": "New",
-          "image": "product-14-1.jpg"
+                "rate": 4.5,
+          "image": "thumbnail-12.jpg"
         },
         {
           "id": 15,
           "title": "Canned Peaches (15 oz)",
           "price": 1.99,
+          "oldPrice": 2.59,
           "stat": "Sale",
-          "image": "product-15-1.jpg"
+                "rate": 4.5,
+          "image": "thumbnail-3.jpg"
         }
       ]
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "Fresh Organic Tomatoes",
+      "price": 2.99,
+      "category": "Vegetables",
+      "image": "/assets/banner/banner-5.png",
+      "seller": "SportMode",
+      "expiresInDays": 5,
+      "rate": 4.2,
+
+      "startOn": "2025-07-19"
+    },
+    {
+      "id": 2,
+      "title": "Organic Bananas (1 lb)",
+      "price": 0.79,
+      "category": "Fruits",
+      "image": "/assets/banner/banner-6.png",
+      "expiresInDays": 44,
+      "seller": "SportMode",
+      "rate": 3.5,
+
+      "startOn": "2025-08-19"
+    },
+    {
+      "id": 3,
+      "title": "Canned Green Beans",
+      "price": 1.29,
+      "category": "Canned Goods",
+      "image": "/assets/banner/banner-7.png",
+      "expiresInDays": 3,
+      "seller": "SportMode",
+      "rate": 3.5,
+      "startOn": "2025-07-18"
+    },
+    {
+      "id": 4,
+      "title": "Organic Strawberries",
+      "price": 4.99,
+      "category": "Fruits",
+      "image": "/assets/banner/banner-8.png",
+      "expiresInDays": 4,
+      "seller": "SportMode",
+      "rate": 2.5,
+      "startOn": "2025-07-20"
     }
   ]
 }

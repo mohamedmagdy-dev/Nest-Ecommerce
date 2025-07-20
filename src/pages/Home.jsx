@@ -2,28 +2,44 @@ import NewsLetterSlider, {
   FeaturedCategories,
   DailyBestSellsSlider,
 } from "../components/Sliders";
+
+import ShopButton, { EmailInput } from "../components/Help-Items";
+import Offer from "../components/Offer";
+
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
 import shopCardOne from "../assets/banner-1.png";
 import shopCardTwo from "../assets/banner-2.png";
 import shopCardThree from "../assets/banner-3.png";
+import BenefitIcon1 from "../assets/icon-1.svg";
+import BenefitIcon2 from "../assets/icon-2.svg";
+import BenefitIcon3 from "../assets/icon-3.svg";
+import BenefitIcon4 from "../assets/icon-4.svg";
+import BenefitIcon5 from "../assets/icon-5.svg";
+
 import DailyBestSellsBanner from "../assets/banner-4.png";
 
 import Category from "../components/Category";
-import Product from "../components/Product";
+import Product, { ProductInRow } from "../components/Product";
 import Filter, { SectionTitle } from "../components/Filter";
+import TopSection from "../components/TopSection";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../features/product/productSlice";
 import { useEffect, useState } from "react";
 
-import ShopButton from "../components/Help-Items";
-
 import { SwiperSlide } from "swiper/react";
+
+import { Link } from "react-router-dom";
+import NewsLetter from "../components/NewsLetter";
+import Benefits from "../components/Benefits";
 
 export default function Home() {
   // Get Products Information
-  const { products, categories, isLoading, error } = useSelector(
+  const { products, categories, offers, isLoading, error } = useSelector(
     (state) => state.products
   );
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -61,9 +77,7 @@ export default function Home() {
     });
     if (filteredProducts.length == 0) {
       return (
-        <p className="font-bold text-3xl whitespace-nowrap">
-          There Is No Product In This Section :)
-        </p>
+        <p className="font-bold text-3xl whitespace-nowrap">No Product :)</p>
       );
     } else {
       return filteredProducts.map((product) => {
@@ -97,6 +111,26 @@ export default function Home() {
             />
           );
         }
+      });
+    }
+  }
+
+  let categoriesOfProductLoaded =
+    !isLoading && !error && Array.isArray(categories) && categories.length > 2;
+
+  function TopSectionProducts(index) {
+    if (categoriesOfProductLoaded) {
+      return categories[index].products.map((product) => {
+        return (
+          <ProductInRow
+            key={product.id}
+            title={product.title}
+            img={product.image}
+            rate={product.rate}
+            oldPrice={product.oldPrice}
+            price={product.price}
+          />
+        );
       });
     }
   }
@@ -155,7 +189,7 @@ export default function Home() {
               getFilterBy={getBestSellsFilter}
             />
           </div>
-          <div className="flex  justify-between gap-5 overflow-hidden ">
+          <div className="flex  justify-between gap-5 overflow-hidden  lg:h-115 ">
             <div
               className="hidden lg:flex flex-col justify-between p-10 rounded-xl max-w-75  min-w-75 items-center "
               style={{
@@ -177,6 +211,64 @@ export default function Home() {
               }
             />
           </div>
+        </div>
+        <div className="deal-of-day mt-10">
+          <div className="flex justify-between gap-5 items-center">
+            <SectionTitle title="Deals Of The Day" />
+            <Link className="font-semibold text-gray-400 duration-200 hover:text-green-400">
+              All Deals <ChevronRightIcon fontSize="small" />
+            </Link>
+          </div>
+          <div className="mt-10 grid min-sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-5 ">
+            {!error &&
+              !isLoading &&
+              offers.map((offer) => {
+                return <Offer key={offer.id} offer={offer} />;
+              })}
+          </div>
+        </div>
+        <div className="top-products mt-10  grid min-sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-10 lg:gap-5 ">
+          <TopSection title="Top Selling">{TopSectionProducts(1)}</TopSection>
+          <TopSection title="Trending Products">
+            {TopSectionProducts(2)}
+          </TopSection>
+          <TopSection title="Recently added">
+            {TopSectionProducts(3)}
+          </TopSection>
+          <TopSection title="Top Rated">{TopSectionProducts(0)}</TopSection>
+        </div>
+        <NewsLetter />
+        <div className="benefits grid min-sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-10 lg:gap-5  ">
+          <Benefits
+            key="1"
+            title="Best prices & offers"
+            desc="Orders $50 or more"
+            image={BenefitIcon1}
+          />
+          <Benefits
+            key="2"
+            title="Free delivery"
+            desc="24/7 amazing services"
+            image={BenefitIcon2}
+          />
+          <Benefits
+            key="3"
+            title="Great daily deal"
+            desc="When you sign up"
+            image={BenefitIcon3}
+          />
+          <Benefits
+            key="4"
+            title="Wide assortment"
+            desc="Mega Discounts"
+            image={BenefitIcon4}
+          />
+          <Benefits
+            key="5"
+            title="Easy returns"
+            desc="Within 30 days"
+            image={BenefitIcon5}
+          />
         </div>
       </div>
     </div>

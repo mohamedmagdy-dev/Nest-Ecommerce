@@ -1,9 +1,7 @@
-// Mui Icons
-import StarIcon from "@mui/icons-material/Star";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import StarHalfIcon from "@mui/icons-material/StarHalf";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { ProductAction, Rating, Price } from "./Help-Items";
+
 import { useState } from "react";
+
 export default function Product(props) {
   const [imgIndex, setImgIndex] = useState(0);
   let statColor;
@@ -23,52 +21,6 @@ export default function Product(props) {
       break;
     default:
       statColor = "#fff";
-  }
-  // Handel Rating Ui
-  function Rating() {
-    let counter = 1;
-    let rates = [];
-    let decimalOnly = props.rate - Math.floor(props.rate);
-
-    for (let i = 1; i <= props.rate; i++) {
-      rates.push(
-        <StarIcon key={counter} className="text-[#fdc040]" fontSize="small" />
-      );
-      counter++;
-    }
-
-    if (decimalOnly >= 0.5) {
-      rates.push(
-        <StarHalfIcon
-          key={counter}
-          className="text-[#fdc040]"
-          fontSize="small"
-        />
-      );
-      counter++;
-    } else {
-      rates.push(
-        <StarBorderIcon
-          key={counter}
-          className="text-gray-400"
-          fontSize="small"
-        />
-      );
-      counter++;
-    }
-
-    for (let i = 1; i <= props.rate - rates.length; i++) {
-      rates.push(
-        <StarBorderIcon
-          key={counter}
-          className="text-gray-400"
-          fontSize="small"
-        />
-      );
-      counter++;
-    }
-
-    return rates;
   }
 
   return (
@@ -102,27 +54,24 @@ export default function Product(props) {
       <div className="details">
         <span className="text-sm text-gray-400">{props.category}</span>
         <h3 className="text-[#253d5f] font-bold text-lg ">{props.title}</h3>
-        <div className="rate my-2 flex justify-between items-center">
-          <div>{<Rating />}</div>
-          <span>({props.rate})</span>
-        </div>
+        <Rating rate={props.rate} />
         <span className="text-sm text-gray-400 ">
           By <span className="text-green-500">{props.seller}</span>
         </span>
-        <div className="action mt-2 flex justify-between items-center ga-2 flex-bottom">
-          <span className="text-green-600 font-bold">
-            ${props.price}
-            {props.oldPrice && (
-              <span className="old-price ml-2 text-del line-through text-gray-400">
-                ${props.oldPrice}
-              </span>
-            )}
-          </span>
-          <button className="cursor-pointer bg-[#def9ec] text-[#3bb79d] rounded p-2 text-sm duration-200 hover:bg-green-600 hover:text-white">
-            <ShoppingCartIcon fontSize="small" />
-            <span className="ml-2">Add</span>
-          </button>
-        </div>
+        <ProductAction price={props.price} oldPrice={props.oldPrice} />
+      </div>
+    </div>
+  );
+}
+
+export function ProductInRow(props) {
+  return (
+    <div className="product-in-row flex gap-3 duration-300 transform hover:translate-y-[-10px]">
+      <img src={`/assets/products/Categoric Products/${props.img}`} className="h-20 rounded" alt={props.title} />
+      <div className="info">
+        <h3 className="duration-200 hover:text-green-500 font-bold">{props.title}</h3>
+        <Rating rate={props.rate} />
+        <Price price={props.price} oldPrice={props.oldPrice} />
       </div>
     </div>
   );

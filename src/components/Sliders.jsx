@@ -16,10 +16,9 @@ import "swiper/css/effect-fade";
 // Import Images
 import Slider1Image from "../assets/slider-1.png";
 import Slider2Image from "../assets/slider-2.png";
-// Import Mui icons
-import EmailIcon from "@mui/icons-material/Email";
 
 import { SectionTitle } from "./Filter";
+import { EmailInput } from "./Help-Items";
 
 const shownItemsCount = {
   320: {
@@ -60,17 +59,7 @@ export default function NewsLetterSlider() {
           <p className="text-gray-400 text-sm lg:text-lg font-semibold text-center md:text-left">
             Save Up To 50% Off On Your First Order
           </p>
-          <div className="mt-6 bg-white rounded-full flex w-fit justify-between gap-2 items-center max-[410px]:hidden">
-            <EmailIcon fontSize="small" className="text-gray-500 ml-5" />
-            <input
-              type="text"
-              className="text-gray-500 grow outline-none font-bold   "
-              placeholder="Your Email Address"
-            />
-            <button className="font-bold text-sm text-white rounded-full bg-[#3bb77e] px-5 py-4 ">
-              Subscribe
-            </button>
-          </div>
+          <EmailInput />
         </div>
         <img
           src={Slider1Image}
@@ -88,17 +77,7 @@ export default function NewsLetterSlider() {
           <p className="text-gray-400 text-sm lg:text-lg font-semibold text-center md:text-left">
             Sign up for the daily newsletter
           </p>
-          <div className="mt-6 bg-white rounded-full flex justify-between w-fit gap-2 items-center max-[410px]:hidden">
-            <EmailIcon fontSize="small" className="text-gray-500 ml-5" />
-            <input
-              type="text"
-              className="text-gray-500 grow outline-none font-bold   "
-              placeholder="Your Email Address"
-            />
-            <button className="font-bold text-sm text-white rounded-full bg-[#3bb77e] px-5 py-4 ">
-              Subscribe
-            </button>
-          </div>
+          <EmailInput />
         </div>
         <img
           src={Slider2Image}
@@ -178,8 +157,8 @@ export function DailyBestSellsSlider(props) {
       }}
       modules={[Autoplay]}
       autoplay={{
-        delay: 2000, 
-        disableOnInteraction: false, 
+        delay: 2000,
+        disableOnInteraction: false,
       }}
       spaceBetween={25}
       loop={true}
