@@ -6,6 +6,11 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import EmailIcon from "@mui/icons-material/Email";
+
+// Handel Add To Cart Button
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cart/cartSlice";
+
 export default function ShopButton(props) {
   return (
     <button>
@@ -64,10 +69,15 @@ export function Rating(props) {
 
 // ACtion Section In Product
 export function ProductAction(props) {
+  const dispatch = useDispatch();
+
   return (
     <div className="action mt-2 flex justify-between items-center ga-2 flex-bottom">
       <Price price={props.price} oldPrice={props.oldPrice} />
-      <button className="cursor-pointer bg-[#def9ec] text-[#3bb79d] rounded p-2 text-sm duration-200 hover:bg-green-600 hover:text-white">
+      <button
+        onClick={() => dispatch(addToCart(props.product))}
+        className="cursor-pointer bg-[#def9ec] text-[#3bb79d] rounded p-2 text-sm duration-200 hover:bg-green-600 active:bg-green-600 active:text-white hover:text-white"
+      >
         <ShoppingCartIcon fontSize="small" />
         <span className="ml-2">Add</span>
       </button>

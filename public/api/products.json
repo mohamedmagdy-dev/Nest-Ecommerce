@@ -381,7 +381,7 @@
           "price": 3.49,
           "oldPrice": 3.99,
           "stat": "New",
-                "rate": 4.5,
+          "rate": 4.5,
           "image": "thumbnail-12.jpg"
         },
         {
@@ -390,7 +390,7 @@
           "price": 1.99,
           "oldPrice": 2.59,
           "stat": "Sale",
-                "rate": 4.5,
+          "rate": 4.5,
           "image": "thumbnail-3.jpg"
         }
       ]
@@ -402,11 +402,11 @@
       "title": "Fresh Organic Tomatoes",
       "price": 2.99,
       "category": "Vegetables",
-      "image": "/assets/banner/banner-5.png",
+      "bgImage": "/assets/banner/banner-5.png",
       "seller": "SportMode",
       "expiresInDays": 5,
       "rate": 4.2,
-
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
       "startOn": "2025-07-19"
     },
     {
@@ -414,10 +414,11 @@
       "title": "Organic Bananas (1 lb)",
       "price": 0.79,
       "category": "Fruits",
-      "image": "/assets/banner/banner-6.png",
+      "bgImage": "/assets/banner/banner-6.png",
       "expiresInDays": 44,
       "seller": "SportMode",
       "rate": 3.5,
+      "images": ["product-2-1.jpg", "product-2-2.jpg"],
 
       "startOn": "2025-08-19"
     },
@@ -426,10 +427,11 @@
       "title": "Canned Green Beans",
       "price": 1.29,
       "category": "Canned Goods",
-      "image": "/assets/banner/banner-7.png",
+      "bgImage": "/assets/banner/banner-7.png",
       "expiresInDays": 3,
       "seller": "SportMode",
       "rate": 3.5,
+      "images": ["product-3-1.jpg", "product-3-2.jpg"],
       "startOn": "2025-07-18"
     },
     {
@@ -437,7 +439,8 @@
       "title": "Organic Strawberries",
       "price": 4.99,
       "category": "Fruits",
-      "image": "/assets/banner/banner-8.png",
+      "bgImage": "/assets/banner/banner-8.png",
+      "images": ["product-4-1.jpg", "product-4-2.jpg"],
       "expiresInDays": 4,
       "seller": "SportMode",
       "rate": 2.5,

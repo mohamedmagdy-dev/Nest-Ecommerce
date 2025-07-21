@@ -58,7 +58,7 @@ export default function Product(props) {
         <span className="text-sm text-gray-400 ">
           By <span className="text-green-500">{props.seller}</span>
         </span>
-        <ProductAction price={props.price} oldPrice={props.oldPrice} />
+        <ProductAction price={props.price} oldPrice={props.oldPrice} product={props.product} />
       </div>
     </div>
   );
@@ -67,9 +67,15 @@ export default function Product(props) {
 export function ProductInRow(props) {
   return (
     <div className="product-in-row flex gap-3 duration-300 transform hover:translate-y-[-10px]">
-      <img src={`/assets/products/Categoric Products/${props.img}`} className="h-20 rounded" alt={props.title} />
+      <img
+        src={`/assets/products/Categoric Products/${props.img}`}
+        className="h-20 rounded"
+        alt={props.title}
+      />
       <div className="info">
-        <h3 className="duration-200 hover:text-green-500 font-bold">{props.title}</h3>
+        <h3 className="duration-200 hover:text-green-500 font-bold">
+          {props.title}
+        </h3>
         <Rating rate={props.rate} />
         <Price price={props.price} oldPrice={props.oldPrice} />
       </div>

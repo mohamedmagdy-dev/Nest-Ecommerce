@@ -30,11 +30,11 @@ export default function Offer(props) {
     <div
       className="offer p-5 rounded-xl mb-30"
       style={{
-        background: `url(${props.offer.image})`,
+        background: `url(${props.offer.bgImage})`,
         backgroundSize: "cover",
       }}
     >
-      <div className="timer flex justify-center lg:justify-between gap-5 mb-5 transform translate-y-30">
+      <div className="timer flex justify-center  gap-5 mb-5 transform translate-y-30">
         <span className="bg-white flex flex-col w-fit items-center p-2 rounded text-sm text-green-500 font-bold group select-none">
           <span className="duration-200 transform group-hover:translate-y-[-3px] ">
             {time[0].toString().padStart(2, "0")}
@@ -69,6 +69,7 @@ export default function Offer(props) {
         <ProductAction
           price={props.offer.price}
           oldPrice={props.offer.oldPrice}
+          product={props.product}
         />
       </div>
     </div>

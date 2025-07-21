@@ -42,6 +42,8 @@ export default function Header() {
 
   const dispatch = useDispatch();
   const { items, isLoading, error } = useSelector((state) => state.categories);
+    // Handel CartItems Counter in ui
+  const { totalQuantity } = useSelector((state) => state.cart);
 
   // Create Items
   function categoriesJsx() {
@@ -111,6 +113,8 @@ export default function Header() {
     setShowMobileMenu(false);
   }
 
+
+
   return (
     <header className="border-b border-gray-200 md:border-none">
       <div className="container mx-auto px-3">
@@ -160,7 +164,7 @@ export default function Header() {
             </Link>
             <Link to="/Cart" className="cart flex items-center relative">
               <span className="counter flex justify-center items-center rounded-xl absolute top-[-10px] left-[10px] w-5 h-5 bg-green-500 text-white">
-                1
+                {totalQuantity}
               </span>
               <ShoppingCartCheckoutIcon />
               <span className="text-gray-500 hidden lg:flex">Cart</span>

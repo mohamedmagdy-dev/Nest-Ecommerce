@@ -93,6 +93,7 @@ export default function Home() {
                 oldPrice={product.oldPrice}
                 category={product.category}
                 seller={product.seller}
+                product={product}
               />
             </SwiperSlide>
           );
@@ -108,6 +109,7 @@ export default function Home() {
               oldPrice={product.oldPrice}
               category={product.category}
               seller={product.seller}
+              product={product}
             />
           );
         }
@@ -223,7 +225,7 @@ export default function Home() {
             {!error &&
               !isLoading &&
               offers.map((offer) => {
-                return <Offer key={offer.id} offer={offer} />;
+                return <Offer key={offer.id} offer={offer} product={offer} />;
               })}
           </div>
         </div>
