@@ -1497,6 +1497,11 @@
       height: calc(var(--spacing) * 115);
     }
   }
+  .lg\:h-118 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 118);
+    }
+  }
   .lg\:w-120 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 120);

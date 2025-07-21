@@ -191,7 +191,7 @@ export default function Home() {
               getFilterBy={getBestSellsFilter}
             />
           </div>
-          <div className="flex  justify-between gap-5 overflow-hidden  lg:h-115 ">
+          <div className="flex  justify-between gap-5 overflow-hidden  lg:h-118 ">
             <div
               className="hidden lg:flex flex-col justify-between p-10 rounded-xl max-w-75  min-w-75 items-center "
               style={{
