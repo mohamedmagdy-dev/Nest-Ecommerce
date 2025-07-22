@@ -2,6 +2,9 @@ import { ProductAction, Rating, Price } from "./Help-Items";
 
 import { useState } from "react";
 
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import AlignVerticalCenterIcon from "@mui/icons-material/AlignVerticalCenter";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 export default function Product(props) {
   const [imgIndex, setImgIndex] = useState(0);
   let statColor;
@@ -58,8 +61,13 @@ export default function Product(props) {
         <span className="text-sm text-gray-400 ">
           By <span className="text-green-500">{props.seller}</span>
         </span>
-        <ProductAction price={props.price} oldPrice={props.oldPrice} product={props.product} />
+        <ProductAction
+          price={props.price}
+          oldPrice={props.oldPrice}
+          product={props.product}
+        />
       </div>
+      <ProductOverLay />
     </div>
   );
 }
@@ -79,6 +87,22 @@ export function ProductInRow(props) {
         <Rating rate={props.rate} />
         <Price price={props.price} oldPrice={props.oldPrice} />
       </div>
+    </div>
+  );
+}
+
+export function ProductOverLay() {
+  return (
+    <div className="overlay absolute z-10 flex items-center justify-center bg-white shadow w-30 h-12 border border-green-400 rounded left-[50%] top-[50%] transform translate-[-50%]">
+      <button className="cursor-pointer text-green-600 border-r border-r-green-500 px-2">
+        <FavoriteIcon fontSize="small" />
+      </button>
+      <button className="cursor-pointer text-green-600 border-r border-r-green-500 px-2">
+        <AlignVerticalCenterIcon fontSize="small" />
+      </button>
+      <button className="cursor-pointer text-green-600  px-2">
+        <VisibilityIcon fontSize="small" />
+      </button>
     </div>
   );
 }

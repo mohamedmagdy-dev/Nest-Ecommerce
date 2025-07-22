@@ -16,6 +16,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
 import { useState } from "react";
+import Table from "../components/Table";
 
 const coupons = [
   { code: "MEGO10", discount: 10 },
@@ -172,31 +173,10 @@ export default function Cart() {
           </button>
         </div>
         <div className="flex justify-between gap-10 items-start flex-wrap min-xl:flex-nowrap">
-          <div className="overflow-x-auto w-full">
-            <div className="products max-sm:min-w-[700px] w-full table text-center border border-gray-300 border-collapse">
-              {/* Table Header */}
-              <div className="table-row bg-gray-200">
-                <div className="table-cell border border-gray-300 p-3 font-bold text-[#253e4f] text-left">
-                  Product
-                </div>
-                <div className="table-cell border border-gray-300 p-3 font-bold text-[#253e4f]">
-                  Unit Price
-                </div>
-                <div className="table-cell border border-gray-300 p-3 font-bold text-[#253e4f]">
-                  Quantity
-                </div>
-                <div className="table-cell border border-gray-300 p-3 font-bold text-[#253e4f]">
-                  Subtotal
-                </div>
-                <div className="table-cell border border-gray-300 p-3 font-bold text-[#253e4f]">
-                  Remove
-                </div>
-              </div>
-
-              {/* Table Body */}
-              <div className="table-row-group">{CreateProducts()}</div>
-            </div>
-          </div>
+          <Table
+            titles={["Product", "Unit Price", "Quantity", "Subtotal", "Remove"]}
+            items={CreateProducts()}
+          />
           <div className="w-full lg:w-[500px]">
             <div className="checkout shadow-md rounded-xl p-5 ">
               <div className="flex justify-between items-center gap-3 border-b border-b-gray-200 py-3">
