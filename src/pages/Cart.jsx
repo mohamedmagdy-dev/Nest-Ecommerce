@@ -7,16 +7,13 @@ import {
   clearCart,
 } from "../features/cart/cartSlice";
 
-import { Rating } from "../components/Help-Items";
-
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import DiscountIcon from "@mui/icons-material/Discount";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
 import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
 import { useState } from "react";
 import Table from "../components/Table";
+import { TableProducts } from "../components/Product";
 
 const coupons = [
   { code: "MEGO10", discount: 10 },
@@ -68,91 +65,6 @@ export default function Cart() {
     }
   }
 
-  function CreateProducts() {
-    if (cartItems.length > 0) {
-      return cartItems.map((product) => {
-        return (
-          <div key={product.id} className="table-row">
-            <div className="table-cell border border-gray-300 p-4">
-              <div className="flex items-center gap-5 min-w-fit">
-                <img
-                  src={`/assets/products/All Products/${product.images[0]}`}
-                  alt={product.title}
-                  className="w-20 h-20 object-cover border rounded-xl border-gray-300"
-                />
-                <div className="desc text-left">
-                  <h3 className="font-semibold">{product.title}</h3>
-                  <Rating rate={product.rate} />
-                </div>
-              </div>
-            </div>
-
-            <div className="table-cell border border-gray-300 p-4 align-middle">
-              ${product.price}
-            </div>
-
-            <div className="table-cell border border-gray-300 p-4 align-middle">
-              <div className="flex items-center justify-center gap-2">
-                <button
-                  onClick={() => dispatch(decreaseQuantity(product))}
-                  className="bg-red-600 rounded text-white cursor-pointer "
-                >
-                  <RemoveIcon fontSize="small" />
-                </button>
-                <span className="font-bold">{product.quantity}</span>
-                <button
-                  onClick={() => dispatch(increaseQuantity(product))}
-                  className="bg-green-600 rounded text-white cursor-pointer "
-                >
-                  <AddIcon fontSize="small" />
-                </button>
-              </div>
-            </div>
-
-            <div className="table-cell border border-gray-300 p-4 align-middle">
-              ${(product.price * product.quantity).toFixed(2)}
-            </div>
-
-            <div
-              onClick={() => dispatch(removeFromCart(product))}
-              className="table-cell border border-gray-300 p-4 align-middle"
-            >
-              <button className="text-red-500 hover:text-red-700 cursor-pointer">
-                <DeleteForeverIcon fontSize="small" />
-              </button>
-            </div>
-          </div>
-        );
-      });
-    } else {
-      return (
-        <div className="table-row">
-          <div className="table-cell border border-gray-300 p-4">
-            <div className="flex items-center gap-5">
-              <div className="desc text-left">No Product Selected ):</div>
-            </div>
-          </div>
-
-          <div className="table-cell border border-gray-300 p-4 align-middle">
-            Empty
-          </div>
-
-          <div className="table-cell border border-gray-300 p-4 align-middle">
-            Empty
-          </div>
-
-          <div className="table-cell border border-gray-300 p-4 align-middle">
-            Empty
-          </div>
-
-          <div className="table-cell border border-gray-300 p-4 align-middle">
-            Empty
-          </div>
-        </div>
-      );
-    }
-  }
-
   return (
     <div className="cart py-10 min-h-[50vh]">
       <div className="container mx-auto px-4 ">
@@ -175,7 +87,15 @@ export default function Cart() {
         <div className="flex justify-between gap-10 items-start flex-wrap min-xl:flex-nowrap">
           <Table
             titles={["Product", "Unit Price", "Quantity", "Subtotal", "Remove"]}
-            items={CreateProducts()}
+            items={
+              <TableProducts
+                items={cartItems}
+                decreaseQuantity={decreaseQuantity}
+                increaseQuantity={increaseQuantity}
+                removeFrom={removeFromCart}
+                addItemButton={{ isEnabled: false }}
+              />
+            }
           />
           <div className="w-full lg:w-[500px]">
             <div className="checkout shadow-md rounded-xl p-5 ">

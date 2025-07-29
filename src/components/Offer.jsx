@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Rating, ProductAction } from "./Help-Items";
-
+import { Link } from "react-router-dom";
 export default function Offer(props) {
   const startDate = new Date(props.offer.startOn);
   const expiryDate = new Date(startDate);
@@ -61,7 +61,15 @@ export default function Offer(props) {
         </span>
       </div>
       <div className="info bg-white rounded-lg p-5  shadow-md transform translate-y-30">
-        <h3 className="text-[#253e4f] mb-1 font-bold text-lg">{props.offer.title}</h3>
+        <Link
+          to={`/Products/${props.offer.id}/${props.offer.title
+            .replace(/\s+/g, "-")
+            .toLowerCase()}`}
+        >
+          <h3 className="text-[#253e4f] mb-1 font-bold text-lg ">
+            {props.offer.title}
+          </h3>
+        </Link>
         <Rating rate={props.offer.rate} />
         <span>
           By <span className="text-green-500">{props.offer.seller}</span>
@@ -69,7 +77,7 @@ export default function Offer(props) {
         <ProductAction
           price={props.offer.price}
           oldPrice={props.offer.oldPrice}
-          product={props.product}
+          product={props.offer}
         />
       </div>
     </div>

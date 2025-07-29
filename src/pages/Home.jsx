@@ -84,34 +84,11 @@ export default function Home() {
         if (isSlider) {
           return (
             <SwiperSlide key={product.id}>
-              <Product
-                stat={product.stat}
-                title={product.title}
-                rate={product.rate}
-                price={product.price}
-                images={product.images}
-                oldPrice={product.oldPrice}
-                category={product.category}
-                seller={product.seller}
-                product={product}
-              />
+              <Product product={product} />
             </SwiperSlide>
           );
         } else {
-          return (
-            <Product
-              key={product.id}
-              stat={product.stat}
-              title={product.title}
-              rate={product.rate}
-              price={product.price}
-              images={product.images}
-              oldPrice={product.oldPrice}
-              category={product.category}
-              seller={product.seller}
-              product={product}
-            />
-          );
+          return <Product key={product.id} product={product} />;
         }
       });
     }
@@ -123,16 +100,7 @@ export default function Home() {
   function TopSectionProducts(index) {
     if (categoriesOfProductLoaded) {
       return categories[index].products.map((product) => {
-        return (
-          <ProductInRow
-            key={product.id}
-            title={product.title}
-            img={product.image}
-            rate={product.rate}
-            oldPrice={product.oldPrice}
-            price={product.price}
-          />
-        );
+        return <ProductInRow key={product.id} product={product} />;
       });
     }
   }
@@ -225,7 +193,7 @@ export default function Home() {
             {!error &&
               !isLoading &&
               offers.map((offer) => {
-                return <Offer key={offer.id} offer={offer} product={offer} />;
+                return <Offer key={offer.id} offer={offer} />;
               })}
           </div>
         </div>

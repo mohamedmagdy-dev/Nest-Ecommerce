@@ -9,6 +9,8 @@ import Compare from "./pages/Compare";
 import WhishList from "./pages/WishList";
 import Cart from "./pages/Cart";
 import MyAccount from "./pages/MyAccount";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 // IMport React Router
 import { Route, Routes } from "react-router-dom";
 
@@ -24,6 +26,8 @@ export default function App() {
         <Route path="/Compare" element={<Compare />} />
         <Route path="/WhishList" element={<WhishList />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/Products" element={<Products />} />
+        <Route path={`/Products/:id`} element={<ProductDetails />} />
         <Route path="/MyAccount" element={<MyAccount />} />
       </Routes>
       {/* End Routes */}

@@ -42,8 +42,11 @@ export default function Header() {
 
   const dispatch = useDispatch();
   const { items, isLoading, error } = useSelector((state) => state.categories);
-    // Handel CartItems Counter in ui
+  // Handel CartItems Counter in ui
   const { totalQuantity } = useSelector((state) => state.cart);
+  const { totalQuantity: wishListQuantity } = useSelector(
+    (state) => state.wishlist
+  );
 
   // Create Items
   function categoriesJsx() {
@@ -113,11 +116,9 @@ export default function Header() {
     setShowMobileMenu(false);
   }
 
-
-
   return (
-    <header className="border-b border-gray-200 md:border-none">
-      <div className="container mx-auto px-3">
+    <header className="border-b border-gray-200 relative z-10 md:border-none">
+      <div className="container mx-auto px-3"> 
         {/* Start Top Header */}
         <div className="py-5 flex justify-between items-center gap-8">
           {/* Logo */}
@@ -157,7 +158,7 @@ export default function Header() {
               className="wishlist flex items-center relative"
             >
               <span className="counter flex justify-center items-center rounded-xl absolute top-[-10px] left-[10px] w-5 h-5 bg-green-500 text-white">
-                2
+                {wishListQuantity}
               </span>
               <FavoriteIcon />
               <span className="text-gray-500 hidden lg:flex">Wishlist</span>
@@ -172,7 +173,7 @@ export default function Header() {
             <div className="my-account relative group">
               <Link
                 to="/MyAccount"
-                className="Account items-center hidden lg:flex "
+                className="Account items-center hidden lg:flex"
               >
                 <AccountBoxIcon />
                 <span className="text-gray-500">Account</span>

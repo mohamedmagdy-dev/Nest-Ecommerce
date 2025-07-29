@@ -13,17 +13,17 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action) => {
+    addItemToCart: (state, action) => {
       const item = action.payload;
       const existing = state.cartItems.find((p) => p.id === item.id);
       if (existing) {
-        existing.quantity++;
+        existing.quantity += item.quantity || 1;
       } else {
-        state.cartItems.push({ ...item, quantity: 1 });
+        state.cartItems.push({ ...item, quantity: item.quantity || 1 });
       }
       updateCoupon(state);
-      state.totalQuantity++;
-      state.totalPrice += item.price;
+      state.totalQuantity += item.quantity || 1;
+      state.totalPrice += item.price * (item.quantity || 1);
     },
     removeFromCart: (state, action) => {
       const product = action.payload;
@@ -77,16 +77,31 @@ const cartSlice = createSlice({
       state.couponAmount = 0;
       state.discount = 0;
     },
+    addItemsToCart: (state, action) => {
+      const items = action.payload;
+      items.map((item) => {
+        const existing = state.cartItems.find((p) => p.id === item.id);
+        if (existing) {
+          existing.quantity += item.quantity || 1;
+        } else {
+          state.cartItems.push({ ...item, quantity: item.quantity || 1 });
+        }
+        updateCoupon(state);
+        state.totalQuantity += item.quantity || 1;
+        state.totalPrice += item.price * (item.quantity || 1);
+      });
+    },
   },
 });
 
 export const {
-  addToCart,
+  addItemToCart,
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
   applyCoupon,
   clearCart,
+  addItemsToCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;
 
