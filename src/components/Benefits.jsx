@@ -6,37 +6,39 @@ import BenefitIcon5 from "../assets/icon-5.svg";
 
 export default function Benefits() {
   return (
-    <div className="benefits grid min-sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-10 lg:gap-5  ">
-      <Benefit
-        key="1"
-        title="Best prices & offers"
-        desc="Orders $50 or more"
-        image={BenefitIcon1}
-      />
-      <Benefit
-        key="2"
-        title="Free delivery"
-        desc="24/7 amazing services"
-        image={BenefitIcon2}
-      />
-      <Benefit
-        key="3"
-        title="Great daily deal"
-        desc="When you sign up"
-        image={BenefitIcon3}
-      />
-      <Benefit
-        key="4"
-        title="Wide assortment"
-        desc="Mega Discounts"
-        image={BenefitIcon4}
-      />
-      <Benefit
-        key="5"
-        title="Easy returns"
-        desc="Within 30 days"
-        image={BenefitIcon5}
-      />
+    <div className="container mx-auto px-3">
+      <div className=" grid min-sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-10 lg:gap-5  ">
+        <Benefit
+          key="1"
+          title="Best prices & offers"
+          desc="Orders $50 or more"
+          image={BenefitIcon1}
+        />
+        <Benefit
+          key="2"
+          title="Free delivery"
+          desc="24/7 amazing services"
+          image={BenefitIcon2}
+        />
+        <Benefit
+          key="3"
+          title="Great daily deal"
+          desc="When you sign up"
+          image={BenefitIcon3}
+        />
+        <Benefit
+          key="4"
+          title="Wide assortment"
+          desc="Mega Discounts"
+          image={BenefitIcon4}
+        />
+        <Benefit
+          key="5"
+          title="Easy returns"
+          desc="Within 30 days"
+          image={BenefitIcon5}
+        />
+      </div>
     </div>
   );
 }
