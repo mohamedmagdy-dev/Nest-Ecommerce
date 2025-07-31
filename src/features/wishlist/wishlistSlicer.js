@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  whishItems: [],
+  wishItems: [],
   totalQuantity: 0,
 };
 
@@ -11,27 +11,25 @@ const wishlistSlice = createSlice({
   reducers: {
     addToWishlist: (state, action) => {
       const item = action.payload;
-      const existing = state.whishItems.find((i) => i.id === item.id);
-      if (existing) {
-        existing.quantity++;
-      } else {
-        state.whishItems.push({ ...item, quantity: 1 });
+      const existing = state.wishItems.find((i) => i.id === item.id);
+      if (!existing) {
+        state.wishItems.push({ ...item, quantity: 1 });
       }
       state.totalQuantity++;
     },
     removeFromWishlist: (state, action) => {
       const product = action.payload;
-      const existing = state.whishItems.find((p) => p.id === product.id);
+      const existing = state.wishItems.find((p) => p.id === product.id);
       if (existing) {
         state.totalQuantity -= existing.quantity;
-        state.whishItems = state.whishItems.filter(
+        state.wishItems = state.wishItems.filter(
           (item) => item.id !== product.id
         );
       }
     },
     increaseQuantity: (state, action) => {
       const product = action.payload;
-      const existing = state.whishItems.find((p) => p.id === product.id);
+      const existing = state.wishItems.find((p) => p.id === product.id);
       if (existing) {
         existing.quantity++;
       }
@@ -39,12 +37,12 @@ const wishlistSlice = createSlice({
     },
     decreaseQuantity: (state, action) => {
       const product = action.payload;
-      const existing = state.whishItems.find((p) => p.id === product.id);
+      const existing = state.wishItems.find((p) => p.id === product.id);
       if (existing) {
         existing.quantity--;
         state.totalQuantity--;
         if (existing.quantity == 0) {
-          state.whishItems = state.whishItems.filter(
+          state.wishItems = state.wishItems.filter(
             (item) => item.id !== product.id
           );
         }
@@ -52,7 +50,7 @@ const wishlistSlice = createSlice({
     },
 
     clearWishlist: (state) => {
-      state.whishItems = [];
+      state.wishItems = [];
       state.totalQuantity = 0;
     },
   },

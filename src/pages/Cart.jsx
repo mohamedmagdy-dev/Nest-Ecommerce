@@ -14,6 +14,7 @@ import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
 import { useState } from "react";
 import Table from "../components/Table";
 import { TableProducts } from "../components/Product";
+import { SectionInfo } from "../components/Base_Ui";
 
 const coupons = [
   { code: "MEGO10", discount: 10 },
@@ -23,8 +24,9 @@ const coupons = [
 
 export default function Cart() {
   const dispatch = useDispatch();
-  const { cartItems, totalPrice, coupon, discount, totalQuantity } =
-    useSelector((state) => state.cart);
+  const { cartItems, totalPrice, coupon, discount } = useSelector(
+    (state) => state.cart
+  );
 
   // Handel Coupons Logic
   const [couponInput, setCouponInput] = useState("");
@@ -69,13 +71,8 @@ export default function Cart() {
     <div className="cart py-10 min-h-[50vh]">
       <div className="container mx-auto px-4 ">
         <div className="flex justify-between items-end flex-wrap">
-          <div>
-            <h1 className="text-2xl font-bold mb-2">Your Cart</h1>
-            <p className="mb-4 text-gray-600">
-              There are <span className="text-green-600">{totalQuantity} </span>
-              products in your cart
-            </p>
-          </div>
+          <SectionInfo itemsCount={cartItems.length} sectionName="Cart" />
+
           <button
             onClick={() => dispatch(clearCart())}
             className="flex gap-1 cursor-pointer mb-4 text-red-500 font-bold"
@@ -94,6 +91,8 @@ export default function Cart() {
                 increaseQuantity={increaseQuantity}
                 removeFrom={removeFromCart}
                 addItemButton={{ isEnabled: false }}
+                tableFelidsCount={5}
+                tableName="cart"
               />
             }
           />

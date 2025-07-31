@@ -7,11 +7,16 @@
       "oldPrice": 3.49,
       "stat": "Hot",
       "rate": 4.7,
-      "stock": 150,
+      "stock": 0,
       "sold": 320,
       "category": "Vegetables",
       "seller": "Fresh Farms",
-      "images": ["product-1-1.jpg", "product-1-2.jpg"]
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
+      "description": {
+        "text": "Juicy vine-ripened organic tomatoes packed with flavor and nutrients.",
+        "size": "Medium",
+        "dimensions": "2-3 inches diameter"
+      }
     },
     {
       "id": 2,
@@ -23,7 +28,12 @@
       "sold": 450,
       "category": "Fruits",
       "seller": "Tropical Fruits Co.",
-      "images": ["product-2-1.jpg", "product-2-2.jpg"]
+      "images": ["product-2-1.jpg", "product-2-2.jpg"],
+      "description": {
+        "text": "Naturally sweet bananas grown without synthetic pesticides or fertilizers.",
+        "size": "1 pound",
+        "dimensions": "6-8 bananas"
+      }
     },
     {
       "id": 3,
@@ -34,9 +44,14 @@
       "rate": 4.2,
       "stock": 85,
       "sold": 210,
-      "category": "Milks & Dairies",
+      "category": "Canned Goods",
       "seller": "Valley Farms",
-      "images": ["product-3-1.jpg", "product-3-2.jpg"]
+      "images": ["product-3-1.jpg", "product-3-2.jpg"],
+      "description": {
+        "text": "Tender green beans preserved at peak freshness, ready to eat.",
+        "size": "14.5 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 4,
@@ -46,9 +61,14 @@
       "rate": 1.8,
       "stock": 75,
       "sold": 180,
-      "category": "Fruits",
+      "category": "clothing & beauty",
       "seller": "Berry Best",
-      "images": ["product-4-1.jpg", "product-4-2.jpg"]
+      "images": ["product-4-1.jpg", "product-4-2.jpg"],
+      "description": {
+        "text": "Sweet and succulent strawberries grown without chemical pesticides.",
+        "size": "1 pound",
+        "dimensions": "Approx. 20 berries"
+      }
     },
     {
       "id": 5,
@@ -58,9 +78,14 @@
       "rate": 4.3,
       "stock": 120,
       "sold": 340,
-      "category": "Milks & Dairies",
+      "category": "Canned Goods",
       "seller": "Golden Harvest",
-      "images": ["product-5-1.jpg", "product-5-2.jpg"]
+      "images": ["product-5-1.jpg", "product-5-2.jpg"],
+      "description": {
+        "text": "Sweet golden corn kernels preserved at peak freshness.",
+        "size": "14.5 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 6,
@@ -71,9 +96,14 @@
       "rate": 4.6,
       "stock": 90,
       "sold": 210,
-      "category": "Vegetables",
+      "category": "Drinks",
       "seller": "Green Leaf Farms",
-      "images": ["product-6-1.jpg", "product-6-2.jpg"]
+      "images": ["product-6-1.jpg", "product-6-2.jpg"],
+      "description": {
+        "text": "Tender organic spinach leaves packed with iron and vitamins.",
+        "size": "10 oz",
+        "dimensions": "6-8 cups"
+      }
     },
     {
       "id": 7,
@@ -83,9 +113,14 @@
       "rate": 4.4,
       "stock": 110,
       "sold": 290,
-      "category": "Milks & Dairies",
+      "category": "Pantry Staples",
       "seller": "Italian Kitchen",
-      "images": ["product-7-1.jpg", "product-7-2.jpg"]
+      "images": ["product-7-1.jpg", "product-7-2.jpg"],
+      "description": {
+        "text": "Rich tomato sauce perfect for pasta, pizza and cooking.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 8,
@@ -96,9 +131,14 @@
       "rate": 4.7,
       "stock": 65,
       "sold": 150,
-      "category": "Fruits",
+      "category": "baking material",
       "seller": "Orchard Fresh",
-      "images": ["product-8-1.jpg", "product-8-2.jpg"]
+      "images": ["product-8-1.jpg", "product-8-2.jpg"],
+      "description": {
+        "text": "Crisp organic apples with perfect balance of sweet and tart.",
+        "size": "3 pounds",
+        "dimensions": "6-8 apples"
+      }
     },
     {
       "id": 9,
@@ -108,9 +148,14 @@
       "rate": 4.5,
       "stock": 80,
       "sold": 190,
-      "category": "Milks & Dairies",
+      "category": "Canned Goods",
       "seller": "Tropical Delight",
-      "images": ["product-9-1.jpg", "product-9-2.jpg"]
+      "images": ["product-9-1.jpg", "product-9-2.jpg"],
+      "description": {
+        "text": "Juicy pineapple slices packed in natural juice.",
+        "size": "20 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 10,
@@ -120,9 +165,14 @@
       "rate": 4.3,
       "stock": 130,
       "sold": 240,
-      "category": "Vegetables",
-      "seller": "Root Vegetables Co.",
-      "images": ["product-10-1.jpg", "product-10-2.jpg"]
+      "category": "Drinks",
+      "seller": "Root Drinks Co.",
+      "images": ["product-10-1.jpg", "product-10-2.jpg"],
+      "description": {
+        "text": "Sweet crunchy carrots grown in organic soil.",
+        "size": "1 pound",
+        "dimensions": "6-8 medium carrots"
+      }
     },
     {
       "id": 11,
@@ -133,9 +183,14 @@
       "rate": 4.4,
       "stock": 95,
       "sold": 270,
-      "category": "Milks & Dairies",
+      "category": "Pantry Staples",
       "seller": "Mediterranean Foods",
-      "images": ["product-11-1.jpg", "product-11-2.jpg"]
+      "images": ["product-11-1.jpg", "product-11-2.jpg"],
+      "description": {
+        "text": "Protein-packed chickpeas ready for hummus or salads.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 12,
@@ -145,9 +200,14 @@
       "rate": 4.8,
       "stock": 60,
       "sold": 170,
-      "category": "Fruits",
+      "category": "pet foods & toy",
       "seller": "Berry Best",
-      "images": ["product-12-1.jpg", "product-12-2.jpg"]
+      "images": ["product-12-1.jpg", "product-12-2.jpg"],
+      "description": {
+        "text": "Antioxidant-rich organic blueberries bursting with flavor.",
+        "size": "6 oz",
+        "dimensions": "Approx. 1 cup"
+      }
     },
     {
       "id": 13,
@@ -157,9 +217,14 @@
       "rate": 4.1,
       "stock": 70,
       "sold": 150,
-      "category": "Milks & Dairies",
+      "category": "Canned Goods",
       "seller": "Forest Harvest",
-      "images": ["product-13-1.jpg", "product-13-2.jpg"]
+      "images": ["product-13-1.jpg", "product-13-2.jpg"],
+      "description": {
+        "text": "Sliced mushrooms preserved for cooking convenience.",
+        "size": "8 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 14,
@@ -172,7 +237,12 @@
       "sold": 120,
       "category": "Vegetables",
       "seller": "Colorful Harvest",
-      "images": ["product-14-1.jpg", "product-14-2.jpg"]
+      "images": ["product-14-1.jpg", "product-14-2.jpg"],
+      "description": {
+        "text": "Vibrant mix of red, yellow and green bell peppers.",
+        "size": "Medium",
+        "dimensions": "3 peppers"
+      }
     },
     {
       "id": 15,
@@ -182,9 +252,14 @@
       "rate": 4.3,
       "stock": 85,
       "sold": 210,
-      "category": "Milks & Dairies",
+      "category": "Canned Goods",
       "seller": "Sunny Valley",
-      "images": ["product-15-1.jpg", "product-15-2.jpg"]
+      "images": ["product-15-1.jpg", "product-15-2.jpg"],
+      "description": {
+        "text": "Sweet peach halves packed in light syrup.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
     },
     {
       "id": 16,
@@ -192,11 +267,780 @@
       "price": 5.99,
       "stat": "Hot",
       "rate": 4.7,
-      "stock": 40,
+      "category": "pet foods & toy",
+      "seller": "Creamy Harvest",
+      "images": ["product-16-1.jpg", "product-16-2.jpg"],
       "sold": 180,
+      "stock": 40,
+      "description": {
+        "text": "Creamy Hass avocados perfect for guacamole or toast.",
+        "size": "Medium",
+        "dimensions": "4 count"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Organic Kale (1 bunch)",
+      "price": 2.49,
+      "oldPrice": 2.99,
+      "stat": "New",
+      "rate": 4.4,
+      "stock": 45,
+      "sold": 110,
+      "category": "milks and dairies",
+      "seller": "Leafy Greens Co.",
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
+      "description": {
+        "text": "Nutrient-dense organic kale perfect for salads and smoothies.",
+        "size": "1 bunch",
+        "dimensions": "Approx. 8-10 leaves"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Organic Pears (2 lb)",
+      "price": 3.99,
+      "stat": "",
+      "rate": 4.5,
+      "stock": 70,
+      "sold": 160,
+      "category": "milks and dairies",
+      "seller": "Orchard Fresh",
+      "images": ["product-2-1.jpg", "product-2-2.jpg"],
+      "description": {
+        "text": "Juicy organic pears with smooth texture and sweet flavor.",
+        "size": "2 pounds",
+        "dimensions": "4-6 pears"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Canned Black Beans (15 oz)",
+      "price": 1.19,
+      "oldPrice": 1.39,
+      "stat": "Sale",
+      "rate": 4.3,
+      "stock": 95,
+      "sold": 230,
+      "category": "Pantry Staples",
+      "seller": "Latin Foods",
+      "images": ["product-3-1.jpg", "product-3-2.jpg"],
+      "description": {
+        "text": "Protein-rich black beans ready for Mexican dishes.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Organic Grapes (2 lb)",
+      "price": 5.49,
+      "stat": "Hot",
+      "rate": 4.6,
+      "stock": 50,
+      "sold": 140,
       "category": "Fruits",
-      "seller": "Creamy Delights",
-      "images": ["product-16-1.jpg", "product-16-2.jpg"]
+      "seller": "Vineyard Select",
+      "images": ["product-4-1.jpg", "product-4-2.jpg"],
+      "description": {
+        "text": "Sweet seedless organic grapes perfect for snacking.",
+        "size": "2 pounds",
+        "dimensions": "Approx. 3 cups"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Organic Broccoli (1 head)",
+      "price": 2.99,
+      "stat": "New",
+      "rate": 4.2,
+      "stock": 60,
+      "sold": 130,
+      "category": "milks and dairies",
+      "seller": "Green Harvest",
+      "images": ["product-5-1.jpg", "product-5-2.jpg"],
+      "description": {
+        "text": "Fresh organic broccoli with tight florets and crisp stems.",
+        "size": "Medium",
+        "dimensions": "1 head"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Canned Tuna in Water (5 oz)",
+      "price": 1.89,
+      "oldPrice": 2.09,
+      "stat": "Save",
+      "rate": 4.7,
+      "stock": 120,
+      "sold": 310,
+      "category": "Canned Goods",
+      "seller": "Ocean Harvest",
+      "images": ["product-6-1.jpg", "product-6-2.jpg"],
+      "description": {
+        "text": "Premium chunk light tuna packed in water.",
+        "size": "5 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Organic Cucumbers (3-pack)",
+      "price": 2.49,
+      "stat": "",
+      "rate": 4.3,
+      "stock": 85,
+      "sold": 190,
+      "category": "Vegetables",
+      "seller": "Crisp Farms",
+      "images": ["product-7-1.jpg", "product-7-2.jpg"],
+      "description": {
+        "text": "Refreshing organic cucumbers perfect for salads.",
+        "size": "Medium",
+        "dimensions": "3 count"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Organic Raspberries (6 oz)",
+      "price": 4.29,
+      "stat": "Hot",
+      "rate": 4.5,
+      "stock": 40,
+      "sold": 120,
+      "category": "fast food",
+      "seller": "Berry Best",
+      "images": ["product-8-1.jpg", "product-8-2.jpg"],
+      "description": {
+        "text": "Delicate organic raspberries packed with antioxidants.",
+        "size": "6 oz",
+        "dimensions": "Approx. 1 cup"
+      }
+    },
+    {
+      "id": 25,
+      "title": "Canned Pumpkin (15 oz)",
+      "price": 1.69,
+      "oldPrice": 1.89,
+      "stat": "Sale",
+      "rate": 4.4,
+      "stock": 65,
+      "sold": 150,
+      "category": "Canned Goods",
+      "seller": "Harvest Time",
+      "images": ["product-9-1.jpg", "product-9-2.jpg"],
+      "description": {
+        "text": "Pure pumpkin puree perfect for pies and baking.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 26,
+      "title": "Organic Zucchini (1 lb)",
+      "price": 2.19,
+      "stat": "New",
+      "rate": 4.1,
+      "stock": 75,
+      "sold": 160,
+      "category": "Drinks",
+      "seller": "Summer Harvest",
+      "images": ["product-10-1.jpg", "product-10-2.jpg"],
+      "description": {
+        "text": "Tender organic zucchini great for grilling or sautéing.",
+        "size": "1 pound",
+        "dimensions": "2-3 medium"
+      }
+    },
+    {
+      "id": 27,
+      "title": "Organic Lemons (2 lb)",
+      "price": 3.99,
+      "stat": "",
+      "rate": 4.6,
+      "stock": 90,
+      "sold": 210,
+      "category": "fast food",
+      "seller": "Citrus Grove",
+      "images": ["product-11-1.jpg", "product-11-2.jpg"],
+      "description": {
+        "text": "Juicy organic lemons with bright flavor.",
+        "size": "2 pounds",
+        "dimensions": "6-8 lemons"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Canned Coconut Milk (13.5 oz)",
+      "price": 1.99,
+      "oldPrice": 2.19,
+      "stat": "Save",
+      "rate": 4.3,
+      "stock": 80,
+      "sold": 180,
+      "category": "Pantry Staples",
+      "seller": "Tropical Delight",
+      "images": ["product-12-1.jpg", "product-12-2.jpg"],
+      "description": {
+        "text": "Rich creamy coconut milk for curries and desserts.",
+        "size": "13.5 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 29,
+      "title": "Organic Sweet Potatoes (3 lb)",
+      "price": 3.49,
+      "stat": "Hot",
+      "rate": 4.5,
+      "stock": 70,
+      "sold": 150,
+      "category": "Vegetables",
+      "seller": "Root Harvest",
+      "images": ["product-13-1.jpg", "product-13-2.jpg"],
+      "description": {
+        "text": "Nutrient-rich organic sweet potatoes with orange flesh.",
+        "size": "3 pounds",
+        "dimensions": "4-6 potatoes"
+      }
+    },
+    {
+      "id": 30,
+      "title": "Organic Blackberries (6 oz)",
+      "price": 3.79,
+      "stat": "New",
+      "rate": 4.4,
+      "stock": 45,
+      "sold": 110,
+      "category": "Fruits",
+      "seller": "Berry Best",
+      "images": ["product-14-1.jpg", "product-14-2.jpg"],
+      "description": {
+        "text": "Sweet-tart organic blackberries packed with nutrients.",
+        "size": "6 oz",
+        "dimensions": "Approx. 1 cup"
+      }
+    },
+    {
+      "id": 31,
+      "title": "Canned Kidney Beans (15 oz)",
+      "price": 1.09,
+      "oldPrice": 1.29,
+      "stat": "Sale",
+      "rate": 4.2,
+      "stock": 100,
+      "sold": 240,
+      "category": "Pantry Staples",
+      "seller": "Latin Foods",
+      "images": ["product-15-1.jpg", "product-15-2.jpg"],
+      "description": {
+        "text": "Protein-packed kidney beans for chili and salads.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 32,
+      "title": "Organic Cauliflower (1 head)",
+      "price": 3.29,
+      "stat": "Hot",
+      "rate": 4.3,
+      "stock": 55,
+      "sold": 130,
+      "category": "Drinks",
+      "seller": "White Harvest",
+      "images": ["product-16-1.jpg", "product-16-2.jpg"],
+      "description": {
+        "text": "Fresh organic cauliflower great for roasting or ricing.",
+        "size": "Medium",
+        "dimensions": "1 head"
+      }
+    },
+    {
+      "id": 33,
+      "title": "Organic Red Onions (1 lb)",
+      "price": 1.99,
+      "stat": "",
+      "rate": 4.2,
+      "stock": 90,
+      "sold": 200,
+      "category": "Vegetables",
+      "seller": "Root Vegetables Co.",
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
+      "description": {
+        "text": "Mild organic red onions perfect for salads and cooking.",
+        "size": "1 pound",
+        "dimensions": "2-3 medium"
+      }
+    },
+    {
+      "id": 34,
+      "title": "Canned Diced Tomatoes (14.5 oz)",
+      "price": 1.29,
+      "oldPrice": 1.49,
+      "stat": "Save",
+      "rate": 4.4,
+      "stock": 110,
+      "sold": 270,
+      "category": "Canned Goods",
+      "seller": "Italian Kitchen",
+      "images": ["product-2-1.jpg", "product-2-2.jpg"],
+      "description": {
+        "text": "Versatile diced tomatoes for sauces, soups and chili.",
+        "size": "14.5 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 35,
+      "title": "Organic Garlic (3-pack)",
+      "price": 1.49,
+      "stat": "New",
+      "rate": 4.7,
+      "stock": 120,
+      "sold": 290,
+      "category": "Vegetables",
+      "seller": "Aromatic Farms",
+      "images": ["product-3-1.jpg", "product-3-2.jpg"],
+      "description": {
+        "text": "Flavorful organic garlic bulbs for cooking.",
+        "size": "3 bulbs",
+        "dimensions": "Approx. 15 cloves"
+      }
+    },
+    {
+      "id": 36,
+      "title": "Organic Plums (1 lb)",
+      "price": 2.99,
+      "stat": "Hot",
+      "rate": 4.3,
+      "stock": 65,
+      "sold": 140,
+      "category": "Fresh Seafood",
+      "seller": "Orchard Fresh",
+      "images": ["product-4-1.jpg", "product-4-2.jpg"],
+      "description": {
+        "text": "Juicy organic plums with sweet-tart flavor.",
+        "size": "1 pound",
+        "dimensions": "4-6 plums"
+      }
+    },
+    {
+      "id": 37,
+      "title": "Canned Lentils (15 oz)",
+      "price": 1.39,
+      "oldPrice": 1.59,
+      "stat": "Sale",
+      "rate": 4.1,
+      "stock": 85,
+      "sold": 190,
+      "category": "Pantry Staples",
+      "seller": "Mediterranean Foods",
+      "images": ["product-5-1.jpg", "product-5-2.jpg"],
+      "description": {
+        "text": "Ready-to-eat protein-packed lentils for quick meals.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 38,
+      "title": "Organic Celery (1 bunch)",
+      "price": 1.99,
+      "stat": "",
+      "rate": 4.0,
+      "stock": 70,
+      "sold": 150,
+      "category": "Vegetables",
+      "seller": "Crisp Farms",
+      "images": ["product-6-1.jpg", "product-6-2.jpg"],
+      "description": {
+        "text": "Crunchy organic celery perfect for snacks and cooking.",
+        "size": "1 bunch",
+        "dimensions": "8-10 stalks"
+      }
+    },
+    {
+      "id": 39,
+      "title": "Organic Cherries (1 lb)",
+      "price": 6.99,
+      "stat": "Hot",
+      "rate": 4.8,
+      "stock": 35,
+      "sold": 90,
+      "category": "Fresh Seafood",
+      "seller": "Orchard Fresh",
+      "images": ["product-7-1.jpg", "product-7-2.jpg"],
+      "description": {
+        "text": "Sweet dark organic cherries with firm texture.",
+        "size": "1 pound",
+        "dimensions": "Approx. 2 cups"
+      }
+    },
+    {
+      "id": 40,
+      "title": "Canned Sardines in Oil (3.75 oz)",
+      "price": 2.49,
+      "oldPrice": 2.79,
+      "stat": "Save",
+      "rate": 4.2,
+      "stock": 60,
+      "sold": 130,
+      "category": "Canned Goods",
+      "seller": "Ocean Harvest",
+      "images": ["product-8-1.jpg", "product-8-2.jpg"],
+      "description": {
+        "text": "Protein-rich sardines packed in olive oil.",
+        "size": "3.75 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 41,
+      "title": "Organic Green Beans (1 lb)",
+      "price": 3.29,
+      "stat": "New",
+      "rate": 4.3,
+      "stock": 55,
+      "sold": 120,
+      "category": "Vegetables",
+      "seller": "Green Harvest",
+      "images": ["product-9-1.jpg", "product-9-2.jpg"],
+      "description": {
+        "text": "Tender organic green beans with crisp texture.",
+        "size": "1 pound",
+        "dimensions": "Approx. 3 cups"
+      }
+    },
+    {
+      "id": 42,
+      "title": "Organic Kiwi (4-pack)",
+      "price": 3.49,
+      "stat": "Hot",
+      "rate": 4.5,
+      "stock": 50,
+      "sold": 110,
+      "category": "Fruits",
+      "seller": "Tropical Fruits Co.",
+      "images": ["product-10-1.jpg", "product-10-2.jpg"],
+      "description": {
+        "text": "Sweet-tart organic kiwi with vibrant green flesh.",
+        "size": "4 count",
+        "dimensions": "Medium"
+      }
+    },
+    {
+      "id": 43,
+      "title": "Canned Artichoke Hearts (14 oz)",
+      "price": 3.29,
+      "oldPrice": 3.59,
+      "stat": "Sale",
+      "rate": 4.4,
+      "stock": 45,
+      "sold": 100,
+      "category": "Canned Goods",
+      "seller": "Mediterranean Foods",
+      "images": ["product-11-1.jpg", "product-11-2.jpg"],
+      "description": {
+        "text": "Tender artichoke hearts packed in water.",
+        "size": "14 oz",
+        "dimensions": "Standard jar size"
+      }
+    },
+    {
+      "id": 44,
+      "title": "Organic Radishes (1 bunch)",
+      "price": 1.69,
+      "stat": "",
+      "rate": 4.1,
+      "stock": 75,
+      "sold": 160,
+      "category": "Vegetables",
+      "seller": "Root Vegetables Co.",
+      "images": ["product-12-1.jpg", "product-12-2.jpg"],
+      "description": {
+        "text": "Peppery organic radishes with crisp texture.",
+        "size": "1 bunch",
+        "dimensions": "8-10 radishes"
+      }
+    },
+    {
+      "id": 45,
+      "title": "Organic Mangoes (2-count)",
+      "price": 3.99,
+      "stat": "Hot",
+      "rate": 4.7,
+      "stock": 40,
+      "sold": 90,
+      "category": "Fresh Seafood",
+      "seller": "Tropical Fruits Co.",
+      "images": ["product-13-1.jpg", "product-13-2.jpg"],
+      "description": {
+        "text": "Sweet juicy organic mangoes with smooth flesh.",
+        "size": "2 count",
+        "dimensions": "Medium-large"
+      }
+    },
+    {
+      "id": 46,
+      "title": "Canned Beets (15 oz)",
+      "price": 1.49,
+      "oldPrice": 1.69,
+      "stat": "Save",
+      "rate": 4.0,
+      "stock": 65,
+      "sold": 140,
+      "category": "Canned Goods",
+      "seller": "Root Harvest",
+      "images": ["product-14-1.jpg", "product-14-2.jpg"],
+      "description": {
+        "text": "Sliced beets preserved for convenience.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 47,
+      "title": "Organic Asparagus (1 lb)",
+      "price": 4.99,
+      "stat": "New",
+      "rate": 4.3,
+      "stock": 35,
+      "sold": 80,
+      "category": "Vegetables",
+      "seller": "Spring Harvest",
+      "images": ["product-15-1.jpg", "product-15-2.jpg"],
+      "description": {
+        "text": "Tender organic asparagus spears with delicate flavor.",
+        "size": "1 pound",
+        "dimensions": "15-20 spears"
+      }
+    },
+    {
+      "id": 48,
+      "title": "Organic Pomegranate",
+      "price": 3.49,
+      "stat": "Hot",
+      "rate": 4.6,
+      "stock": 30,
+      "sold": 70,
+      "category": "Fresh Seafood",
+      "seller": "Exotic Fruits Co.",
+      "images": ["product-16-1.jpg", "product-16-2.jpg"],
+      "description": {
+        "text": "Juicy organic pomegranate packed with arils.",
+        "size": "1 fruit",
+        "dimensions": "Medium"
+      }
+    },
+    {
+      "id": 49,
+      "title": "Canned Peas (15 oz)",
+      "price": 1.19,
+      "oldPrice": 1.39,
+      "stat": "Sale",
+      "rate": 4.2,
+      "stock": 90,
+      "sold": 210,
+      "category": "Canned Goods",
+      "seller": "Valley Farms",
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
+      "description": {
+        "text": "Sweet green peas preserved at peak freshness.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 50,
+      "title": "Canned Sardines in Oil (3.75 oz)",
+      "price": 2.49,
+      "oldPrice": 2.79,
+      "stat": "Save",
+      "rate": 4.2,
+      "stock": 60,
+      "sold": 130,
+      "category": "Canned Goods",
+      "seller": "Ocean Harvest",
+      "images": ["product-8-1.jpg", "product-8-2.jpg"],
+      "description": {
+        "text": "Protein-rich sardines packed in olive oil.",
+        "size": "3.75 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 51,
+      "title": "Organic Green Beans (1 lb)",
+      "price": 3.29,
+      "stat": "New",
+      "rate": 4.3,
+      "stock": 55,
+      "sold": 120,
+      "category": "Vegetables",
+      "seller": "Green Harvest",
+      "images": ["product-9-1.jpg", "product-9-2.jpg"],
+      "description": {
+        "text": "Tender organic green beans with crisp texture.",
+        "size": "1 pound",
+        "dimensions": "Approx. 3 cups"
+      }
+    },
+    {
+      "id": 52,
+      "title": "Organic Kiwi (4-pack)",
+      "price": 3.49,
+      "stat": "Hot",
+      "rate": 4.5,
+      "stock": 50,
+      "sold": 110,
+      "category": "Fruits",
+      "seller": "Tropical Fruits Co.",
+      "images": ["product-10-1.jpg", "product-10-2.jpg"],
+      "description": {
+        "text": "Sweet-tart organic kiwi with vibrant green flesh.",
+        "size": "4 count",
+        "dimensions": "Medium"
+      }
+    },
+    {
+      "id": 53,
+      "title": "Canned Artichoke Hearts (14 oz)",
+      "price": 3.29,
+      "oldPrice": 3.59,
+      "stat": "Sale",
+      "rate": 4.4,
+      "stock": 45,
+      "sold": 100,
+      "category": "Canned Goods",
+      "seller": "Mediterranean Foods",
+      "images": ["product-11-1.jpg", "product-11-2.jpg"],
+      "description": {
+        "text": "Tender artichoke hearts packed in water.",
+        "size": "14 oz",
+        "dimensions": "Standard jar size"
+      }
+    },
+    {
+      "id": 54,
+      "title": "Organic Radishes (1 bunch)",
+      "price": 1.69,
+      "stat": "",
+      "rate": 4.1,
+      "stock": 75,
+      "sold": 160,
+      "category": "Vegetables",
+      "seller": "Root Vegetables Co.",
+      "images": ["product-12-1.jpg", "product-12-2.jpg"],
+      "description": {
+        "text": "Peppery organic radishes with crisp texture.",
+        "size": "1 bunch",
+        "dimensions": "8-10 radishes"
+      }
+    },
+    {
+      "id": 55,
+      "title": "Organic Mangoes (2-count)",
+      "price": 3.99,
+      "stat": "Hot",
+      "rate": 4.7,
+      "stock": 40,
+      "sold": 90,
+      "category": "Fresh Seafood",
+      "seller": "Tropical Fruits Co.",
+      "images": ["product-13-1.jpg", "product-13-2.jpg"],
+      "description": {
+        "text": "Sweet juicy organic mangoes with smooth flesh.",
+        "size": "2 count",
+        "dimensions": "Medium-large"
+      }
+    },
+    {
+      "id": 56,
+      "title": "Canned Beets (15 oz)",
+      "price": 1.49,
+      "oldPrice": 1.69,
+      "stat": "Save",
+      "rate": 4.0,
+      "stock": 65,
+      "sold": 140,
+      "category": "Canned Goods",
+      "seller": "Root Harvest",
+      "images": ["product-14-1.jpg", "product-14-2.jpg"],
+      "description": {
+        "text": "Sliced beets preserved for convenience.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 57,
+      "title": "Organic Asparagus (1 lb)",
+      "price": 4.99,
+      "stat": "New",
+      "rate": 4.3,
+      "stock": 35,
+      "sold": 80,
+      "category": "Vegetables",
+      "seller": "Spring Harvest",
+      "images": ["product-15-1.jpg", "product-15-2.jpg"],
+      "description": {
+        "text": "Tender organic asparagus spears with delicate flavor.",
+        "size": "1 pound",
+        "dimensions": "15-20 spears"
+      }
+    },
+    {
+      "id": 58,
+      "title": "Organic Pomegranate",
+      "price": 3.49,
+      "stat": "Hot",
+      "rate": 4.6,
+      "stock": 30,
+      "sold": 70,
+      "category": "Fresh Seafood",
+      "seller": "Exotic Fruits Co.",
+      "images": ["product-16-1.jpg", "product-16-2.jpg"],
+      "description": {
+        "text": "Juicy organic pomegranate packed with arils.",
+        "size": "1 fruit",
+        "dimensions": "Medium"
+      }
+    },
+    {
+      "id": 59,
+      "title": "Canned Peas (15 oz)",
+      "price": 1.19,
+      "oldPrice": 1.39,
+      "stat": "Sale",
+      "rate": 4.2,
+      "stock": 90,
+      "sold": 210,
+      "category": "Canned Goods",
+      "seller": "Valley Farms",
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
+      "description": {
+        "text": "Sweet green peas preserved at peak freshness.",
+        "size": "15 oz",
+        "dimensions": "Standard can size"
+      }
+    },
+    {
+      "id": 60,
+      "title": "Organic Brussels Sprouts (1 lb)",
+      "price": 3.99,
+      "stat": "New",
+      "rate": 4.4,
+      "stock": 45,
+      "sold": 100,
+      "category": "Vegetables",
+      "seller": "Mini Cabbage Co.",
+      "images": ["product-2-1.jpg", "product-2-2.jpg"],
+      "description": {
+        "text": "Nutritious organic Brussels sprouts perfect for roasting.",
+        "size": "1 pound",
+        "dimensions": "20-25 sprouts"
+      }
     }
   ],
   "categories": [
@@ -407,7 +1251,15 @@
       "expiresInDays": 5,
       "rate": 4.2,
       "images": ["product-1-1.jpg", "product-1-2.jpg"],
-      "startOn": "2025-07-19"
+      "startOn": "2025-07-19",
+      "stock": 40,
+      "isOfferOn": false,
+
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
     },
     {
       "id": 2,
@@ -419,8 +1271,15 @@
       "seller": "SportMode",
       "rate": 3.5,
       "images": ["product-2-1.jpg", "product-2-2.jpg"],
+      "isOfferOn": true,
 
-      "startOn": "2025-08-19"
+      "startOn": "2025-08-19",
+      "stock": 40,
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
     },
     {
       "id": 3,
@@ -428,11 +1287,19 @@
       "price": 1.29,
       "category": "Canned Goods",
       "bgImage": "/assets/banner/banner-7.png",
-      "expiresInDays": 3,
+      "expiresInDays": 30,
       "seller": "SportMode",
       "rate": 3.5,
       "images": ["product-3-1.jpg", "product-3-2.jpg"],
-      "startOn": "2025-07-18"
+      "startOn": "2025-07-18",
+      "isOfferOn": true,
+
+      "stock": 40,
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
     },
     {
       "id": 4,
@@ -441,10 +1308,96 @@
       "category": "Fruits",
       "bgImage": "/assets/banner/banner-8.png",
       "images": ["product-4-1.jpg", "product-4-2.jpg"],
-      "expiresInDays": 4,
+      "expiresInDays": 50,
       "seller": "SportMode",
       "rate": 2.5,
-      "startOn": "2025-07-20"
+      "startOn": "2025-07-20",
+      "stock": 40,
+      "isOfferOn": false,
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Fresh Organic Tomatoes",
+      "price": 2.99,
+      "category": "Vegetables",
+      "bgImage": "/assets/banner/banner-5.png",
+      "seller": "SportMode",
+      "expiresInDays": 5,
+      "rate": 4.2,
+      "images": ["product-1-1.jpg", "product-1-2.jpg"],
+      "startOn": "2025-07-19",
+      "stock": 40,
+      "isOfferOn": false,
+
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Organic Bananas (1 lb)",
+      "price": 0.79,
+      "category": "Fruits",
+      "bgImage": "/assets/banner/banner-6.png",
+      "expiresInDays": 44,
+      "seller": "SportMode",
+      "rate": 3.5,
+      "images": ["product-2-1.jpg", "product-2-2.jpg"],
+      "isOfferOn": true,
+
+      "startOn": "2025-08-19",
+      "stock": 40,
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Canned Green Beans",
+      "price": 1.29,
+      "category": "Canned Goods",
+      "bgImage": "/assets/banner/banner-7.png",
+      "expiresInDays": 30,
+      "seller": "SportMode",
+      "rate": 3.5,
+      "images": ["product-3-1.jpg", "product-3-2.jpg"],
+      "startOn": "2025-07-18",
+      "isOfferOn": true,
+
+      "stock": 40,
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Organic Strawberries",
+      "price": 4.99,
+      "category": "Fruits",
+      "bgImage": "/assets/banner/banner-8.png",
+      "images": ["product-4-1.jpg", "product-4-2.jpg"],
+      "expiresInDays": 50,
+      "seller": "SportMode",
+      "rate": 2.5,
+      "startOn": "2025-07-20",
+      "stock": 40,
+      "isOfferOn": false,
+      "description": {
+        "text": "Fresh Organic Tomatoes is a high quality organic item provided by Fresh Farms.",
+        "size": "320",
+        "dimensions": "Standard market size"
+      }
     }
   ]
 }

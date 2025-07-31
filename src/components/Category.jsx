@@ -1,4 +1,4 @@
-import ShopButton from "./Help-Items";
+import { ShopButton } from "./Base_Ui";
 export default function Category(props) {
   return (
     <div
@@ -12,7 +12,7 @@ export default function Category(props) {
       <h2 className="font-bold text-xl sm:text-2xl text-[#253d4e]">
         {props.title}
       </h2>
-      <ShopButton />
+      <ShopButton title="Shop Now"  />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import newsLetterBanner from "../assets/banner-10.png";
 import deliveryGuy from "../assets/banner-9.png";
 
-import { EmailInput } from "../components/Help-Items";
+import { EmailInput } from "./Base_Ui";
 export default function NewsLetter() {
   return (
     <div

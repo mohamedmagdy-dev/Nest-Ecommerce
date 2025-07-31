@@ -17,8 +17,7 @@ import "swiper/css/effect-fade";
 import Slider1Image from "../assets/slider-1.png";
 import Slider2Image from "../assets/slider-2.png";
 
-import { SectionTitle } from "./Filter";
-import { EmailInput } from "./Help-Items";
+import SectionTitle, { EmailInput } from "./Base_Ui";
 
 const shownItemsCount = {
   320: {

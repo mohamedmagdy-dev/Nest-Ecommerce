@@ -1,15 +1,31 @@
 import { useEffect, useState } from "react";
-import { Rating, ProductAction } from "./Help-Items";
+import { Rating, ProductAction } from "./Product";
 import { Link } from "react-router-dom";
 export default function Offer(props) {
   const startDate = new Date(props.offer.startOn);
   const expiryDate = new Date(startDate);
   expiryDate.setDate(startDate.getDate() + props.offer.expiresInDays);
-  // const isExpired = now > expiryDate;
+  const [offerEnd, setOfferEnd] = useState(false);
   const [time, setTime] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
-    let intervalHandel = setInterval(() => {
+    let intervalHandel;
+
+    if (props.offer.isOfferOn) {
+      intervalHandel = setInterval(() => {
+        const now = new Date();
+        const timeDiffMs = expiryDate - now;
+        const days = Math.floor(timeDiffMs / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiffMs / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeDiffMs / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeDiffMs / 1000) % 60);
+        setTime([days, hours, minutes, seconds]);
+        if (timeDiffMs <= 0) {
+          setOfferEnd(true);
+          clearInterval(intervalHandel);
+        }
+      }, 1000);
+    } else {
       const now = new Date();
       const timeDiffMs = expiryDate - now;
       const days = Math.floor(timeDiffMs / (1000 * 60 * 60 * 24));
@@ -17,14 +33,30 @@ export default function Offer(props) {
       const minutes = Math.floor((timeDiffMs / (1000 * 60)) % 60);
       const seconds = Math.floor((timeDiffMs / 1000) % 60);
       setTime([days, hours, minutes, seconds]);
-      if (timeDiffMs <= 0) {
-        clearInterval(intervalHandel);
-      }
-    }, 1000);
+      setOfferEnd(true);
+    }
     return () => {
       return clearInterval(intervalHandel);
     };
   }, []);
+
+  function ShowProductAction() {
+    if (offerEnd) {
+      return (
+        <div className="mt-2 w-fit mx-auto text-center bg-red-400 text-red-800 font-bold rounded p-2 whitespace-nowrap">
+          Offer Closed
+        </div>
+      );
+    } else if (props.offer.isOfferOn && offerEnd == false) {
+      return (
+        <ProductAction
+          price={props.offer.price}
+          oldPrice={props.offer.oldPrice}
+          product={props.offer}
+        />
+      );
+    }
+  }
 
   return (
     <div
@@ -74,11 +106,7 @@ export default function Offer(props) {
         <span>
           By <span className="text-green-500">{props.offer.seller}</span>
         </span>
-        <ProductAction
-          price={props.offer.price}
-          oldPrice={props.offer.oldPrice}
-          product={props.offer}
-        />
+        {ShowProductAction()}
       </div>
     </div>
   );

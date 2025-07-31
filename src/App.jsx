@@ -1,8 +1,13 @@
+// IMport React Router
+import { Route, Routes } from "react-router-dom";
+
 // Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import NewsLetter from "./components/NewsLetter";
+import Benefits from "./components/Benefits";
 // Pages
+
 import Home from "./pages/Home";
 import Deals from "./pages/Deals";
 import Compare from "./pages/Compare";
@@ -11,13 +16,14 @@ import Cart from "./pages/Cart";
 import MyAccount from "./pages/MyAccount";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
-// IMport React Router
-import { Route, Routes } from "react-router-dom";
 
 export default function App() {
+  // Get Products Information
+
   return (
     <>
       <Header />
+
       {/* Start Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,10 +33,13 @@ export default function App() {
         <Route path="/WhishList" element={<WhishList />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Products" element={<Products />} />
+        <Route path={`/Products/:category`} element={<Products />} />
         <Route path={`/Products/:id`} element={<ProductDetails />} />
         <Route path="/MyAccount" element={<MyAccount />} />
       </Routes>
       {/* End Routes */}
+      <NewsLetter />
+      <Benefits />
       <Footer />
     </>
   );

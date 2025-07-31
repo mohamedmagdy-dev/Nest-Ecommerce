@@ -10,25 +10,21 @@ import Table from "../components/Table";
 import { TableProducts } from "../components/Product";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { SectionInfo } from "../components/Base_Ui";
 
 export default function WishList() {
+  const { wishItems } = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
-  const { whishItems, totalQuantity } = useSelector((state) => state.wishlist);
+
   return (
     <div className="py-10 min-h-[50vh]">
       <div className="container mx-auto px-4 ">
         <div className="flex justify-between  flex-wrap gap-5 items-end">
-          <div>
-            <h1 className="text-2xl font-bold mb-2">Your WishList</h1>
-            <p className="mb-4 text-gray-600">
-              There are <span className="text-green-600">{totalQuantity} </span>
-              products in your WishList
-            </p>
-          </div>
+          <SectionInfo itemsCount={wishItems.length} sectionName="WishList" />
           <div className="flex gap-5 justify-between w-full">
             <button
               onClick={() => {
-                dispatch(addItemsToCart(whishItems));
+                dispatch(addItemsToCart(wishItems));
                 dispatch(clearWishlist());
               }}
               className="font-bold text:lg  text-green-600 mb-4 cursor-pointer flex items-center gap-2"
@@ -57,10 +53,12 @@ export default function WishList() {
           ]}
           items={
             <TableProducts
-              items={whishItems}
+              items={wishItems}
               decreaseQuantity={decreaseQuantity}
               increaseQuantity={increaseQuantity}
               removeFrom={removeFromWishlist}
+              tableFelidsCount={5}
+              tableName="wishlist"
               addItemButton={{
                 isEnabled: true,
                 dispatch: [addItemToCart, removeFromWishlist],

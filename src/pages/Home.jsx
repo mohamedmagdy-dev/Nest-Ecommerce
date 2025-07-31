@@ -3,7 +3,6 @@ import NewsLetterSlider, {
   DailyBestSellsSlider,
 } from "../components/Sliders";
 
-import ShopButton, { EmailInput } from "../components/Help-Items";
 import Offer from "../components/Offer";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -11,17 +10,17 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import shopCardOne from "../assets/banner-1.png";
 import shopCardTwo from "../assets/banner-2.png";
 import shopCardThree from "../assets/banner-3.png";
-import BenefitIcon1 from "../assets/icon-1.svg";
-import BenefitIcon2 from "../assets/icon-2.svg";
-import BenefitIcon3 from "../assets/icon-3.svg";
-import BenefitIcon4 from "../assets/icon-4.svg";
-import BenefitIcon5 from "../assets/icon-5.svg";
 
 import DailyBestSellsBanner from "../assets/banner-4.png";
 
 import Category from "../components/Category";
 import Product, { ProductInRow } from "../components/Product";
-import Filter, { SectionTitle } from "../components/Filter";
+
+import SectionTitle, {
+  ShopButton,
+  Filter,
+  Loader,
+} from "../components/Base_Ui";
 import TopSection from "../components/TopSection";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -31,8 +30,6 @@ import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
 
 import { Link } from "react-router-dom";
-import NewsLetter from "../components/NewsLetter";
-import Benefits from "../components/Benefits";
 
 export default function Home() {
   // Get Products Information
@@ -55,7 +52,6 @@ export default function Home() {
   }
 
   // Daily Best Sells
-
   // Filter Products by Items
   const [bestSellsSectionFilter, setBestSellsSectionFilter] = useState("New");
   // Get Selected Category Filter
@@ -77,9 +73,10 @@ export default function Home() {
     });
     if (filteredProducts.length == 0) {
       return (
-        <p className="font-bold text-3xl whitespace-nowrap">No Product :)</p>
+        <p className="font-bold text-3xl whitespace-nowrap">No Product here</p>
       );
     } else {
+      filteredProducts.length = 10;
       return filteredProducts.map((product) => {
         if (isSlider) {
           return (
@@ -107,6 +104,7 @@ export default function Home() {
 
   return (
     <div className="home">
+      <Loader isLoading={isLoading} />
       <div className="container mx-auto px-3 mb-6">
         <NewsLetterSlider />
         <FeaturedCategories />
@@ -133,12 +131,10 @@ export default function Home() {
             <Filter
               filterCategories={[
                 "All",
-                "Milks & Dairies",
-                "Coffees & Teas",
-                "Pet Foods",
-                "Meats",
                 "Vegetables",
                 "Fruits",
+                "Canned Goods",
+                "Pantry Staples",
               ]}
               getFilterBy={getPopularFilter}
             />
@@ -149,6 +145,9 @@ export default function Home() {
             {!error &&
               !isLoading &&
               createProducts(popularSectionFilter, "popular")}
+          </div>
+          <div className="mt-10 flex justify-center ">
+            <ShopButton title="Show More"  />
           </div>
         </div>
         <div className="daily-best-sells mt-10">
@@ -171,7 +170,7 @@ export default function Home() {
                 Bring nature into your home
               </h3>
 
-              <ShopButton />
+              <ShopButton title="Shop Now" />
             </div>
             <DailyBestSellsSlider
               products={
@@ -185,14 +184,17 @@ export default function Home() {
         <div className="deal-of-day mt-10">
           <div className="flex justify-between gap-5 items-center">
             <SectionTitle title="Deals Of The Day" />
-            <Link className="font-semibold text-gray-400 duration-200 hover:text-green-400">
+            <Link
+              to={"/Deals"}
+              className="font-semibold text-gray-400 duration-200 hover:text-green-400"
+            >
               All Deals <ChevronRightIcon fontSize="small" />
             </Link>
           </div>
           <div className="mt-10 grid min-sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-5 ">
             {!error &&
               !isLoading &&
-              offers.map((offer) => {
+              offers.slice(0, 4).map((offer) => {
                 return <Offer key={offer.id} offer={offer} />;
               })}
           </div>
@@ -207,39 +209,7 @@ export default function Home() {
           </TopSection>
           <TopSection title="Top Rated">{TopSectionProducts(0)}</TopSection>
         </div>
-        <NewsLetter />
-        <div className="benefits grid min-sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-10 lg:gap-5  ">
-          <Benefits
-            key="1"
-            title="Best prices & offers"
-            desc="Orders $50 or more"
-            image={BenefitIcon1}
-          />
-          <Benefits
-            key="2"
-            title="Free delivery"
-            desc="24/7 amazing services"
-            image={BenefitIcon2}
-          />
-          <Benefits
-            key="3"
-            title="Great daily deal"
-            desc="When you sign up"
-            image={BenefitIcon3}
-          />
-          <Benefits
-            key="4"
-            title="Wide assortment"
-            desc="Mega Discounts"
-            image={BenefitIcon4}
-          />
-          <Benefits
-            key="5"
-            title="Easy returns"
-            desc="Within 30 days"
-            image={BenefitIcon5}
-          />
-        </div>
+
       </div>
     </div>
   );

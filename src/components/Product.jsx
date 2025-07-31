@@ -1,10 +1,12 @@
-import { ProductAction, Rating, Price } from "./Help-Items";
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { addToWishlist } from "../features/wishlist/wishlistSlicer";
+import { addToCompare } from "../features/compare/compareSlice";
+import { addItemToCart } from "../features/cart/cartSlice";
+
 // Mui icon
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import AlignVerticalCenterIcon from "@mui/icons-material/AlignVerticalCenter";
@@ -13,7 +15,12 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import StarHalfIcon from "@mui/icons-material/StarHalf";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+import { StockState } from "./Base_Ui";
 export default function Product({ product }) {
   const [imgIndex, setImgIndex] = useState(0);
   let statColor;
@@ -68,6 +75,7 @@ export default function Product({ product }) {
         {/* Product Route  */}
         <Link
           to={`/Products/${product.id}/${product.title
+            .trim()
             .replace(/\s+/g, "-")
             .toLowerCase()}`}
         >
@@ -84,7 +92,7 @@ export default function Product({ product }) {
         />
       </div>
       <ProductOverLay
-        product={product.product}
+        product={product}
         style="opacity-0  group-hover:opacity-100 duration-300"
       />
     </div>
@@ -95,6 +103,7 @@ export function ProductInRow({ product }) {
   return (
     <Link
       to={`/Products/${product.id}/${product.title
+        .trim()
         .replace(/\s+/g, "-")
         .toLowerCase()}`}
     >
@@ -104,7 +113,7 @@ export function ProductInRow({ product }) {
           className="h-20 rounded"
           alt={product.title}
         />
-        <div className="info">
+        <div className="info ">
           <h3 className="duration-200 hover:text-green-500 font-bold">
             {product.title}
           </h3>
@@ -121,7 +130,7 @@ export function ProductOverLay(props) {
 
   return (
     <div
-      className={`overlay absolute z-10 ${props.style} flex items-center justify-center bg-white shadow w-30 h-12 border border-green-400 rounded left-[50%] top-[50%] transform translate-[-50%]`}
+      className={`overlay absolute z-3 ${props.style} flex items-center justify-center bg-white shadow w-30 h-10 border border-green-400 rounded left-[50%] top-[50%] transform translate-[-50%]`}
     >
       <button
         onClick={() => dispatch(addToWishlist(props.product))}
@@ -129,7 +138,10 @@ export function ProductOverLay(props) {
       >
         <FavoriteIcon fontSize="small" />
       </button>
-      <button className="cursor-pointer text-green-600 border-r border-r-green-500 px-2">
+      <button
+        onClick={() => dispatch(addToCompare(props.product))}
+        className="cursor-pointer text-green-600 border-r border-r-green-500 px-2"
+      >
         <AlignVerticalCenterIcon fontSize="small" />
       </button>
       <button className="cursor-pointer text-green-600  px-2">
@@ -141,10 +153,26 @@ export function ProductOverLay(props) {
 
 export function TableProducts(props) {
   const dispatch = useDispatch();
-  if (props.items.length > 0) {
+  function EmptyCells() {
+    const emptyCells = [];
+
+    for (let i = 0; i < props.tableFelidsCount - 1; i++) {
+      const Item = (
+        <div
+          key={i}
+          className="table-cell border border-gray-300 p-4  align-middle"
+        >
+          Empty
+        </div>
+      );
+      emptyCells.push(Item);
+    }
+    return emptyCells;
+  }
+  if (props.items.length > 0 && props.tableName !== "compare") {
     return props.items.map((product) => {
       return (
-        <div key={product.id} className="table-row">
+        <div key={product.id} className="table-row ">
           <div className="table-cell border border-gray-300 p-4">
             <div className="flex items-center gap-5 min-w-fit">
               <img
@@ -211,31 +239,162 @@ export function TableProducts(props) {
         </div>
       );
     });
+  } else if (props.items.length > 0 && props.tableName == "compare") {
+    return props.items.map((product) => {
+      return (
+        <div key={product.id} className="table-row">
+          <div className="table-cell border border-gray-300 min-w-50 p-4 align-middle">
+            <img
+              src={`/assets/products/All Products/${product.images[0]}`}
+              alt={product.title}
+              className="w-40 h-40 object-cover border rounded-xl border-gray-300"
+            />
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 align-middle">
+            <h3 className="font-semibold whitespace-nowrap">{product.title}</h3>
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 align-middle">
+            ${product.price}
+          </div>
+          <div className="table-cell border border-gray-300 p-4 align-middle w-fit">
+            <Rating rate={product.rate} />
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 min-w-50 align-middle">
+            <p>{product.description.text}</p>
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 align-middle">
+            <StockState stock={product.stock} />
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 min-w-40 align-middle">
+            {product.description.size} Gram
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 align-middle">
+            {product.description.dimensions}
+          </div>
+
+          <div className="table-cell border border-gray-300 p-4 align-middle">
+            {product.stock > 0 ? <AddToCartButton product={product} /> : "-"}
+          </div>
+          <div className="table-cell border border-gray-300 p-4 align-middle">
+            <button
+              onClick={() => dispatch(props.removeFrom(product))}
+              className="text-red-500 hover:text-red-700 duration-200 cursor-pointer"
+            >
+              <DeleteForeverIcon fontSize="medium" />
+            </button>
+          </div>
+        </div>
+      );
+    });
   } else {
     return (
       <div className="table-row">
         <div className="table-cell border border-gray-300 p-4">
           <div className="flex items-center gap-5">
-            <div className="desc text-left">No Product Selected ):</div>
+            <div className="desc text-left whitespace-nowrap">
+              No Product Selected ):
+            </div>
           </div>
         </div>
-
-        <div className="table-cell border border-gray-300 p-4 align-middle">
-          Empty
-        </div>
-
-        <div className="table-cell border border-gray-300 p-4 align-middle">
-          Empty
-        </div>
-
-        <div className="table-cell border border-gray-300 p-4 align-middle">
-          Empty
-        </div>
-
-        <div className="table-cell border border-gray-300 p-4 align-middle">
-          Empty
-        </div>
+        {EmptyCells()}
       </div>
     );
   }
+}
+
+export function Price(props) {
+  return (
+    <span className="text-green-600 font-bold">
+      ${props.price}
+      {props.oldPrice && (
+        <span className="old-price ml-2 text-del line-through text-gray-400">
+          ${props.oldPrice}
+        </span>
+      )}
+    </span>
+  );
+}
+
+// Handel Rating Ui
+export function Rating(props) {
+  let counter = 1;
+  let rates = [];
+
+  const fullStars = Math.floor(props.rate);
+  const hasHalfStar = props.rate - fullStars >= 0.5;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+  for (let i = 0; i < fullStars; i++) {
+    rates.push(
+      <StarIcon key={counter} className="text-[#fdc040]" fontSize="small" />
+    );
+    counter++;
+  }
+
+  if (hasHalfStar) {
+    rates.push(
+      <StarHalfIcon key={counter} className="text-[#fdc040]" fontSize="small" />
+    );
+    counter++;
+  }
+
+  for (let i = 0; i < emptyStars; i++) {
+    rates.push(
+      <StarBorderIcon
+        key={counter}
+        className="text-gray-400"
+        fontSize="small"
+      />
+    );
+    counter++;
+  }
+
+  return (
+    <div className="rate my-2 flex gap-5 items-center ">
+      <div className="flex">{rates}</div>
+      <span>({props.rate})</span>
+    </div>
+  );
+}
+
+// ACtion Section In Product
+export function ProductAction(props) {
+  return (
+    <div
+      className={`action mt-2 flex  items-center gap-2 flex-bottom ${
+        props.product.stock > 0 ? "justify-between" : "justify-center"
+      }`}
+    >
+      {props.product.stock > 0 ? (
+        <>
+          <Price price={props.price} oldPrice={props.oldPrice} />
+          <AddToCartButton product={props.product} />
+        </>
+      ) : (
+        <span className="bg-red-400 text-red-800 font-bold rounded p-1 whitespace-nowrap">
+          Out Of Stock
+        </span>
+      )}
+    </div>
+  );
+}
+
+export function AddToCartButton(props) {
+  const dispatch = useDispatch();
+
+  return (
+    <button
+      onClick={() => dispatch(addItemToCart(props.product))}
+      className="cursor-pointer whitespace-nowrap bg-[#def9ec] text-[#3bb79d] rounded p-2 text-sm duration-200 hover:bg-green-600 active:bg-green-600 active:text-white hover:text-white"
+    >
+      <ShoppingCartIcon fontSize="small" />
+      <span className="ml-2">Add</span>
+    </button>
+  );
 }

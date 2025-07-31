@@ -27,7 +27,6 @@ import { useEffect, useState, useRef } from "react";
 
 // import React Routes
 import { Link } from "react-router-dom";
-
 // Import Component
 import MobileMenu from "./MobileMenu";
 
@@ -43,9 +42,11 @@ export default function Header() {
   const dispatch = useDispatch();
   const { items, isLoading, error } = useSelector((state) => state.categories);
   // Handel CartItems Counter in ui
-  const { totalQuantity } = useSelector((state) => state.cart);
-  const { totalQuantity: wishListQuantity } = useSelector(
-    (state) => state.wishlist
+  const { cartItems } = useSelector((state) => state.cart);
+  const { wishItems } = useSelector((state) => state.wishlist);
+  // Compare Items Count
+  const { itemsQuantity: compareItemQuantity } = useSelector(
+    (state) => state.compare
   );
 
   // Create Items
@@ -68,7 +69,8 @@ export default function Header() {
   function ShowCategoriesInNav(
     catCount = items.length,
     addIcon = false,
-    style = ""
+    style = "",
+    menuCloser = "full"
   ) {
     let categoriesJsx = [];
     // Check If The Data AllReady Comes
@@ -77,9 +79,14 @@ export default function Header() {
     for (let i = 0; i < catCount; i++) {
       if (i == catCount) break;
       categoriesJsx.push(
-        <li key={items[i].id}>
+        <li
+          onClick={() =>
+            menuCloser == "full" ? setShowCatMenu(false) : closeMobileMenu()
+          }
+          key={items[i].id}
+        >
           <Link
-            to={`/categories/${items[i].name}`}
+            to={`/Products/${items[i].name.replace(/\s+/g, "-").toLowerCase()}`}
             className={`${style} whitespace-nowrap`}
           >
             {addIcon ? (
@@ -118,9 +125,9 @@ export default function Header() {
 
   return (
     <header className="border-b border-gray-200 relative z-10 md:border-none">
-      <div className="container mx-auto px-3"> 
+      <div className="container mx-auto px-3">
         {/* Start Top Header */}
-        <div className="py-5 flex justify-between items-center gap-8">
+        <div className="py-5 flex justify-between items-center gap-8 max-[420px]:flex-col">
           {/* Logo */}
           <Link to={"/Home"}>
             <img className="w-40" src={Logo} alt="Nest Logo" />
@@ -142,30 +149,27 @@ export default function Header() {
           </div>
           {/* Header Actions */}
           <div className="header-actions flex gap-5 ">
-            <Link
-              to="/Compare"
-              className="compare items-center relative  hidden lg:flex"
-            >
+            <Link to="/Compare" className="compare items-center relative flex">
               <span className="counter flex justify-center items-center rounded-xl absolute top-[-10px] left-[10px] w-5 h-5 bg-green-500 text-white">
-                3
+                {compareItemQuantity}
               </span>
               <AlignVerticalCenterIcon />
 
-              <span className="text-gray-500 ">Compare</span>
+              <span className="text-gray-500  hidden lg:flex">Compare</span>
             </Link>
             <Link
               to="/WhishList"
               className="wishlist flex items-center relative"
             >
               <span className="counter flex justify-center items-center rounded-xl absolute top-[-10px] left-[10px] w-5 h-5 bg-green-500 text-white">
-                {wishListQuantity}
+                {wishItems.length}
               </span>
               <FavoriteIcon />
               <span className="text-gray-500 hidden lg:flex">Wishlist</span>
             </Link>
             <Link to="/Cart" className="cart flex items-center relative">
               <span className="counter flex justify-center items-center rounded-xl absolute top-[-10px] left-[10px] w-5 h-5 bg-green-500 text-white">
-                {totalQuantity}
+                {cartItems.length}
               </span>
               <ShoppingCartCheckoutIcon />
               <span className="text-gray-500 hidden lg:flex">Cart</span>
@@ -226,19 +230,19 @@ export default function Header() {
             >
               <MenuIcon fontSize="large" />
             </button>
-            <MobileMenu
-              style={
-                showMobileMenu ? "translate-x-[0%]" : "translate-x-[-100%]"
-              }
-              closeFunction={closeMobileMenu}
-              links={ShowCategoriesInNav(
-                undefined,
-                true,
-                "flex items-center gap-3 p-3 border border-gray-200 rounded font-bold text-md duration-300 hover:border-green-400 hover:shadow-sm cursor-pointer"
-              )}
-            />
           </div>
         </div>
+        <MobileMenu
+          style={showMobileMenu ? "translate-x-[0%]" : "translate-x-[-100%]"}
+          closeFunction={closeMobileMenu}
+          isLoading={isLoading}
+          links={ShowCategoriesInNav(
+            undefined,
+            true,
+            "flex items-center gap-3 p-3 border border-gray-200 rounded font-bold text-md duration-300 hover:border-green-400 hover:shadow-sm cursor-pointer",
+            "mobile"
+          )}
+        />
       </div>
       {/* Navigation */}
       <nav className="hidden md:block border-y border-gray-200 py-3 ">
@@ -272,7 +276,8 @@ export default function Header() {
               {ShowCategoriesInNav(
                 undefined,
                 true,
-                "flex items-center gap-3 p-3 border border-gray-200 rounded font-bold text-md duration-300 hover:border-green-400 hover:shadow-sm cursor-pointer"
+                "flex items-center gap-3 p-3 border border-gray-200 rounded font-bold text-md duration-300 hover:border-green-400 hover:shadow-sm cursor-pointer",
+                "full"
               )}
             </ul>
           </div>
