@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "./Base_Ui";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../features/auth/authSlicer";
 import { useState } from "react";
 import formImg from "../assets/form-img.jpg";
@@ -11,6 +11,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [reWritePassword, setReWritePassword] = useState("");
   const dispatch = useDispatch();
+  const { isAuth } = useSelector((state) => state.auth);
 
   function validateForm() {
     if (
@@ -92,7 +93,7 @@ export default function SignUp() {
         <Link
           onClick={() => validateForm()}
           className="text-white flex items-center mx-auto justify-center shadow-sm duration-200 hover:bg-green-600 focus:bg-green-600 bg-green-500 w-22 h-8 rounded font-bold "
-          to={"/MyAccount/Dashboard"}
+          to={isAuth ? "/MyAccount/Dashboard" : ""}
         >
           Sign Up
         </Link>
