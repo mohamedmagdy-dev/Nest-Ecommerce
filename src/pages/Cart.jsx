@@ -15,6 +15,7 @@ import { useState } from "react";
 import Table from "../components/Table";
 import { TableProducts } from "../components/Product";
 import { SectionInfo } from "../components/Base_Ui";
+import toast from "react-hot-toast";
 
 const coupons = [
   { code: "MEGO10", discount: 10 },
@@ -48,9 +49,11 @@ export default function Cart() {
           setCouponApplied(true);
           SetMsg("Coupon Applied");
           dispatch(applyCoupon(found));
+          toast.success("Coupon Applied");
         } else {
           setCouponApplied(false);
           SetMsg("Coupon Not Valid");
+          toast.error("Coupon NotValid");
         }
       }
     }

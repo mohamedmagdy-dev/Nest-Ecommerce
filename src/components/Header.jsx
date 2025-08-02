@@ -1,7 +1,7 @@
 // Import Redux
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCategories } from "../features/categories/categoriesSlice";
-
+import { logout } from "../features/auth/authSlicer";
 // Import Mui
 import SearchIcon from "@mui/icons-material/Search";
 import AlignVerticalCenterIcon from "@mui/icons-material/AlignVerticalCenter";
@@ -31,6 +31,8 @@ import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
+  // Auth
+  const { isAuth } = useSelector((state) => state.auth);
   // Handel Categories Menu
   const [showCatMenu, setShowCatMenu] = useState(false);
   const categoriesMenu = useRef(null);
@@ -124,7 +126,7 @@ export default function Header() {
   }
 
   return (
-    <header className="border-b border-gray-200 relative z-10 md:border-none">
+    <header className="border-b sticky w-full bg-white top-0 border-gray-200  z-10 md:border-none shadow-sm">
       <div className="container mx-auto px-3">
         {/* Start Top Header */}
         <div className="py-5 flex justify-between items-center gap-8 max-[420px]:flex-col">
@@ -175,21 +177,23 @@ export default function Header() {
               <span className="text-gray-500 hidden lg:flex">Cart</span>
             </Link>
             <div className="my-account relative group">
-              <Link
-                to="/MyAccount"
-                className="Account items-center hidden lg:flex"
-              >
+              <span className="Account items-center hidden lg:flex cursor-pointer">
                 <AccountBoxIcon />
                 <span className="text-gray-500">Account</span>
-              </Link>
+              </span>
 
               <ul className="opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-5 transform transition-all duration-300 ease-in-out flex absolute bg-white p-4 w-50 right-0 translate-y-8 z-10 border border-gray-200 rounded flex-col gap-5 shadow">
-                <li>
-                  <Link className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm">
-                    <AccountBoxIcon fontSize="small" />
-                    My Account
-                  </Link>
-                </li>
+                {!!isAuth && (
+                  <li>
+                    <Link
+                      to={"/MyAccount/Dashboard"}
+                      className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm"
+                    >
+                      <AccountBoxIcon fontSize="small" />
+                      My Account
+                    </Link>
+                  </li>
+                )}
                 <li>
                   <Link className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm ">
                     <LocationOnIcon fontSize="small" />
@@ -215,10 +219,24 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm">
-                    <LoginIcon fontSize="small" />
-                    Log in
-                  </Link>
+                  {isAuth ? (
+                    <Link
+                      to={"/Login"}
+                      onClick={() => dispatch(logout())}
+                      className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm"
+                    >
+                      <LogoutIcon fontSize="small" />
+                      Log Out
+                    </Link>
+                  ) : (
+                    <Link
+                      to={"/Login"}
+                      className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm"
+                    >
+                      <LoginIcon fontSize="small" />
+                      Log in
+                    </Link>
+                  )}
                 </li>
               </ul>
             </div>

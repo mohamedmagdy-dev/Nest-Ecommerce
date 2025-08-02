@@ -94,9 +94,13 @@ export default function Products() {
         <div
           className={`products grid min-sm:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-5 mt-10`}
         >
-          {displayedProducts.map((product) => {
-            return <Product key={product.id} product={product} />;
-          })}
+          {displayedProducts.length >= 1 ? (
+            displayedProducts.map((product) => {
+              return <Product key={product.id} product={product} />;
+            })
+          ) : (
+            <p className="text-xl font-bold text-red-500">No Products Here </p>
+          )}
         </div>
         <Pagination
           currentPage={currentPage}
@@ -104,7 +108,6 @@ export default function Products() {
           itemsPerPage={itemsPerPage}
           onPageChange={setCurrentPage}
         />
-
       </div>
     </div>
   );

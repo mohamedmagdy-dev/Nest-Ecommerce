@@ -1,4 +1,4 @@
-import Offer from "../components/Offer";
+import {Offer} from "../components/Offers";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts } from "../features/product/productSlice";

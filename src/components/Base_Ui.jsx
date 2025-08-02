@@ -13,14 +13,23 @@ export default function SectionTitle({ title }) {
 }
 
 export function Filter({ filterCategories, getFilterBy }) {
+  const [activeElement, setActiveElement] = useState(null);
+  useEffect(() => {
+    setActiveElement(filterCategories[0]);
+  }, []);
   return (
     <ul className="flex gap-4 flex-wrap whitespace-nowrap items-center ">
       {filterCategories.map((category, index) => {
         return (
           <li
             key={index}
-            onClick={() => getFilterBy(category)}
-            className="cursor-pointer font-bold duration-200 hover:text-green-500"
+            onClick={() => {
+              setActiveElement(category);
+              getFilterBy(category);
+            }}
+            className={`cursor-pointer font-bold duration-200 hover:text-green-500   focus:text-green-500  ${
+              activeElement === category ? "text-green-500" : ""
+            }`}
           >
             {category}
           </li>
@@ -33,7 +42,7 @@ export function Filter({ filterCategories, getFilterBy }) {
 export function EmailInput() {
   return (
     <div
-      className={`mt-6 bg-white rounded-full flex max-sm:mx-auto w-fit justify-between gap-2 items-center max-[410px]:hidden`}
+      className={`mt-6 bg-white rounded-full flex max-sm:mx-auto w-fit justify-between gap-2 items-center max-[440px]:hidden`}
     >
       <EmailIcon fontSize="small" className="text-gray-500 ml-5" />
       <input

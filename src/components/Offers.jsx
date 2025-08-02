@@ -1,7 +1,41 @@
 import { useEffect, useState } from "react";
 import { Rating, ProductAction } from "./Product";
 import { Link } from "react-router-dom";
-export default function Offer(props) {
+import SectionTitle from "./Base_Ui";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../features/product/productSlice";
+// Import Mui Icons
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+export default function Offers() {
+  const { offers, isLoading, error } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  return (
+    <div className="deal-of-day mt-10">
+      <div className="flex justify-between gap-5 items-center">
+        <SectionTitle title="Deals Of The Day" />
+        <Link
+          to={"/Deals"}
+          className="font-semibold text-gray-400 duration-200 hover:text-green-400"
+        >
+          All Deals <ChevronRightIcon fontSize="small" />
+        </Link>
+      </div>
+      <div className="mt-10 grid min-sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-cols-[repeat(1,minmax(100%,1fr))] gap-5 ">
+        {!error &&
+          !isLoading &&
+          offers.slice(0, 4).map((offer) => {
+            return <Offer key={offer.id} offer={offer} />;
+          })}
+      </div>
+    </div>
+  );
+}
+
+export function Offer(props) {
   const startDate = new Date(props.offer.startOn);
   const expiryDate = new Date(startDate);
   expiryDate.setDate(startDate.getDate() + props.offer.expiresInDays);

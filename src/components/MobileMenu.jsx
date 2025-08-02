@@ -15,8 +15,16 @@ import { Link } from "react-router-dom";
 
 // Import React
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../features/auth/authSlicer";
+// Mui iCons
 
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 export default function MobileMenu({ style, closeFunction, links }) {
+  const { isAuth } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
   // Too stop Scroll The Page when Menu Opened
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -36,7 +44,8 @@ export default function MobileMenu({ style, closeFunction, links }) {
         <img src={Logo} alt="Nest Logo" />
         <button
           onClick={() => closeFunction()}
-          className="w-6 h-6 rounded-full flex justify-center items-center bg-green-400 text-white cursor-pointer"
+          className="w-6 h-6 rounded-full flex justify-center items-center bg-green-400 text-white cursor-pointer
+          duration-200 focus:bg-green-500 hover:bg-green-500 "
         >
           <CloseIcon fontSize="small" />
         </button>
@@ -53,19 +62,39 @@ export default function MobileMenu({ style, closeFunction, links }) {
         <ul className="flex flex-col gap-5 mb-6">{links}</ul>
       </nav>
       <div className="border rounded text-sm border-gray-200 p-4 flex flex-col mb-6 gap-4">
-        <Link onClick={() => closeFunction()} to={"/Account"}>
-          <AccountBoxIcon fontSize="small" className="mr-2 text-green-500" />
-          My Account
-        </Link>
-      </div>
-      <div className="border rounded text-sm border-gray-200 p-4 flex flex-col mb-6 gap-4">
-        <Link>
+        {!!isAuth && (
+          <Link onClick={() => closeFunction()} to={"/MyAccount/Dashboard"}>
+            <AccountBoxIcon fontSize="small" className="mr-2 text-green-500" />
+            My Account
+          </Link>
+        )}
+
+        {isAuth ? (
+          <Link
+            onClick={() => {
+              closeFunction();
+              dispatch(logout());
+            }}
+            to={"/Login"}
+          >
+            <LogoutIcon fontSize="small" className="mr-2 text-green-500" />
+            Log Out
+          </Link>
+        ) : (
+          <Link
+            onClick={() => {
+              closeFunction();
+            }}
+            to={"/Login"}
+          >
+            <LogoutIcon fontSize="small" className="mr-2 text-green-500" />
+            Log in
+          </Link>
+        )}
+
+        <Link to="">
           <LocationOnIcon fontSize="small" className="mr-2 text-green-500" />
           Our Location
-        </Link>
-        <Link>
-          <PersonIcon fontSize="small" className="mr-2 text-green-500" />
-          Log In / Sign Up
         </Link>
         <a href="tel:(+01) - 2345 - 6789 ">
           <LocalPhoneIcon fontSize="small" className="mr-2 text-green-500" />

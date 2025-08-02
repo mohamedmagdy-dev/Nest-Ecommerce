@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -19,10 +19,16 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CloseIcon from "@mui/icons-material/Close";
 
 import { StockState } from "./Base_Ui";
-export default function Product({ product }) {
+
+// Toaster
+import toast from "react-hot-toast";
+export default function Product({ product, isSlider }) {
   const [imgIndex, setImgIndex] = useState(0);
+  const [showQuickSee, setShowQuickSee] = useState(false);
+
   let statColor;
   // Handel Product Color Stat
   switch (product.stat) {
@@ -42,12 +48,26 @@ export default function Product({ product }) {
       statColor = "#fff";
   }
 
+  function handelShowQuickSee() {
+    setShowQuickSee((prev) => !prev);
+  }
+
+  function QuickSee() {
+    if (!!showQuickSee && isSlider == false) {
+      return (
+        <QuickSeeProduct product={product} handelClose={handelShowQuickSee} />
+      );
+    }
+  }
+
   return (
     <div
       onMouseEnter={() => setImgIndex(1)}
       onMouseLeave={() => setImgIndex(0)}
       className={`product flex flex-col All group relative justify-between ${product.category} rounded-xl border min-h-full border-gray-300 duration-200 hover:border-green-300 hover:shadow-md p-5`}
     >
+      {QuickSee()}
+
       <span
         className="absolute text-white flex w-15 h-7 items-center justify-center rounded-br-xl rounded-tl-xl top-0 left-0 text-sm z-9"
         style={{ backgroundColor: statColor }}
@@ -91,10 +111,13 @@ export default function Product({ product }) {
           product={product}
         />
       </div>
-      <ProductOverLay
-        product={product}
-        style="opacity-0  group-hover:opacity-100 duration-300"
-      />
+      {!isSlider && (
+        <ProductOverLay
+          product={product}
+          style="opacity-0 group-hover:opacity-100 duration-300"
+          showQuickSee={handelShowQuickSee}
+        />
+      )}
     </div>
   );
 }
@@ -126,28 +149,58 @@ export function ProductInRow({ product }) {
 }
 
 export function ProductOverLay(props) {
-  const dispatch = useDispatch();
-
   return (
     <div
       className={`overlay absolute z-3 ${props.style} flex items-center justify-center bg-white shadow w-30 h-10 border border-green-400 rounded left-[50%] top-[50%] transform translate-[-50%]`}
     >
+      <AddToWishListButton
+        product={props.product}
+        style="text-green-600 border-r border-r-green-500 px-2"
+      />
+
+      <CompareButton
+        product={props.product}
+        style="text-green-600 border-r border-r-green-500 px-2"
+      />
       <button
-        onClick={() => dispatch(addToWishlist(props.product))}
-        className="cursor-pointer text-green-600 border-r border-r-green-500 px-2"
+        onClick={() => props.showQuickSee()}
+        className="cursor-pointer text-green-600  px-2"
       >
-        <FavoriteIcon fontSize="small" />
-      </button>
-      <button
-        onClick={() => dispatch(addToCompare(props.product))}
-        className="cursor-pointer text-green-600 border-r border-r-green-500 px-2"
-      >
-        <AlignVerticalCenterIcon fontSize="small" />
-      </button>
-      <button className="cursor-pointer text-green-600  px-2">
         <VisibilityIcon fontSize="small" />
       </button>
     </div>
+  );
+}
+
+export function AddToWishListButton(props) {
+  const dispatch = useDispatch();
+
+  return (
+    <button
+      onClick={() => {
+        dispatch(addToWishlist(props.product));
+        toast.success("Added to wishlist!");
+      }}
+      className={`cursor-pointer ${props.style}`}
+    >
+      <FavoriteIcon fontSize="small" />
+    </button>
+  );
+}
+
+export function CompareButton(props) {
+  const dispatch = useDispatch();
+
+  return (
+    <button
+      onClick={() => {
+        dispatch(addToCompare(props.product));
+        toast.success("Added to compare!");
+      }}
+      className={`cursor-pointer ${props.style}`}
+    >
+      <AlignVerticalCenterIcon fontSize="small" />
+    </button>
   );
 }
 
@@ -310,10 +363,10 @@ export function TableProducts(props) {
 
 export function Price(props) {
   return (
-    <span className="text-green-600 font-bold">
+    <span className="text-green-600 font-bold text-lg">
       ${props.price}
       {props.oldPrice && (
-        <span className="old-price ml-2 text-del line-through text-gray-400">
+        <span className="old-price ml-2 text-del  line-through text-gray-400">
           ${props.oldPrice}
         </span>
       )}
@@ -390,11 +443,70 @@ export function AddToCartButton(props) {
 
   return (
     <button
-      onClick={() => dispatch(addItemToCart(props.product))}
+      onClick={() => {
+        dispatch(addItemToCart(props.product));
+        toast.success("Added to cart!");
+      }}
       className="cursor-pointer whitespace-nowrap bg-[#def9ec] text-[#3bb79d] rounded p-2 text-sm duration-200 hover:bg-green-600 active:bg-green-600 active:text-white hover:text-white"
     >
       <ShoppingCartIcon fontSize="small" />
-      <span className="ml-2">Add</span>
+      <span className="ml-2">{props.title || "Add"}</span>
     </button>
+  );
+}
+
+export function QuickSeeProduct({ product, handelClose }) {
+  const p = useRef();
+
+  return (
+    <div
+      ref={p}
+      onClick={(e) => (p.current == e.target ? handelClose() : "")}
+      className="fixed z-10 top-0 left-0 bg-[#00000070] h-screen w-screen hidden md:block"
+    >
+      <div
+        className={` p-5 absolute z-11 bg-white   md:w-[700px] shadow rounded-lg border border-gray-200 top-[50%] left-[50%] transform translate-y-[-50%] translate-x-[-50%]  `}
+      >
+        <button
+          onClick={() => handelClose()}
+          className="w-6 h-6 absolute right-5 top-5 rounded-full flex justify-center items-center duration-200 focus:bg-green-500 hover:bg-green-500 bg-green-400 text-white cursor-pointer"
+        >
+          <CloseIcon fontSize="small" />
+        </button>
+        <div className="flex items-center border border-gray-200 rounded-xl mb-5">
+          <img
+            className="w-[50%] "
+            src={`/assets/products/All Products/${product.images[0]}`}
+            alt={product.title}
+          />
+          <img
+            className="w-[50%]"
+            src={`/assets/products/All Products/${product.images[1]}`}
+            alt={product.title}
+          />
+        </div>
+        {/* Product Route  */}
+        <Link
+          to={`/Products/${product.id}/${product.title
+            .trim()
+            .replace(/\s+/g, "-")
+            .toLowerCase()}`}
+        >
+          <h3 className="text-[#253d5f] font-bold text-xl ">{product.title}</h3>
+        </Link>
+        <Rating rate={product.rate} />
+        <span className="text-sm text-gray-400 ">
+          By <span className="text-green-500">{product.seller}</span>
+        </span>
+        <p className="text-[#253d5f] font-bold text-lg mt-4">
+          {product.description.text}
+        </p>
+        <ProductAction
+          price={product.price}
+          oldPrice={product.oldPrice}
+          product={product}
+        />
+      </div>
+    </div>
   );
 }
