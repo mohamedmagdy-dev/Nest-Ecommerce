@@ -16,7 +16,8 @@ import { Link } from "react-router-dom";
 // Import React
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../features/auth/authSlicer";
+import { logoutUser } from "../features/auth/authSlicer";
+import toast from "react-hot-toast";
 // Mui iCons
 
 import LoginIcon from "@mui/icons-material/Login";
@@ -73,7 +74,8 @@ export default function MobileMenu({ style, closeFunction, links }) {
           <Link
             onClick={() => {
               closeFunction();
-              dispatch(logout());
+              dispatch(logoutUser());
+              toast.success("Logged out successfully");
             }}
             to={"/Login"}
           >

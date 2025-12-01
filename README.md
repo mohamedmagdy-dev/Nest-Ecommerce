@@ -205,15 +205,38 @@ const cartSlice = createSlice({
 
 ### **Product Management**
 - **Dynamic Filtering**: Filter products by category, price, rating
-- **Search Functionality**: Real-time search with debouncing
+
 - **Product Comparison**: Side-by-side feature comparison
 - **Image Galleries**: Zoom and gallery functionality
 
 ### **User Authentication**
 - **Protected Routes**: Secure access to user-specific features
 - **Form Validation**: Client-side and server-side validation
-- **Session Management**: Persistent login sessions
-- **Password Security**: Secure password handling
+
+-
+
+## 🔐 Firebase Authentication Integration
+
+This project uses **Firebase Authentication (Email/Password)** for user login and registration:
+
+- **Configuration**
+  - `src/firebase.js` initializes Firebase and exports `auth` (and `db` for future Firestore use).
+- **Auth State Management**
+  - `src/features/auth/authSlicer.js` defines async thunks:
+    - `signupUser` → `createUserWithEmailAndPassword(auth, email, password)`
+    - `loginUser` → `signInWithEmailAndPassword(auth, email, password)`
+    - `logoutUser` → `signOut(auth)`
+  - Slice state: `{ isAuth, user, isLoading, error }`.
+- **UI Integration**
+  - `Login.jsx` and `SignUp.jsx`:
+    - Use Redux thunks (`loginUser`, `signupUser`).
+    - Show loading state on submit and display errors.
+    - Use `react-hot-toast` for success/error notifications.
+    - Redirect to `/` on successful login/signup.
+  - `MyAccount.jsx` → `Dashboard` component:
+    - Reads `state.auth.user` and shows greeting:
+      - Uses `user.name` when available.
+      - Falls back to the part of `user.email` before `@`.
 
 ### **Responsive Design**
 - **Mobile-First**: Optimized for mobile devices
@@ -221,43 +244,7 @@ const cartSlice = createSlice({
 - **Touch Interactions**: Optimized for touch devices
 - **Performance**: Optimized images and lazy loading
 
-## 🔧 Configuration
 
-### **Environment Variables**
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_BASE_URL=your_api_base_url
-VITE_APP_NAME=Nest-Ecommerce
-VITE_APP_VERSION=1.0.0
-```
-
-### **Tailwind CSS Configuration**
-The project uses Tailwind CSS v4 with custom configuration:
-
-```javascript
-// vite.config.js
-import tailwindcss from "@tailwindcss/vite";
-
-export default defineConfig({
-  plugins: [tailwindcss(), react()],
-});
-```
-
-### **Redux Store Configuration**
-```javascript
-// store.js
-export const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-    categories: categoriesReducer,
-    products: productsReducer,
-    wishlist: wishlistReducer,
-    compare: compareReducer,
-    auth: authReducer,
-  },
-});
-```
 
 ## 📱 Responsive Design
 
@@ -319,21 +306,7 @@ npm run build
 
 ## 🧪 Testing
 
-### **Manual Testing Checklist**
-- [ ] User registration and login
-- [ ] Product browsing and filtering
-- [ ] Shopping cart functionality
-- [ ] Wishlist management
-- [ ] Product comparison
-- [ ] Responsive design on all devices
-- [ ] Form validation
-- [ ] Error handling
 
-### **Performance Testing**
-- [ ] Lighthouse audit
-- [ ] Core Web Vitals
-- [ ] Mobile performance
-- [ ] Loading times
 
 ## 🤝 Contributing
 
@@ -351,7 +324,7 @@ npm run build
 - Use meaningful commit messages
 - Write clean, readable code
 - Add comments for complex logic
-- Test your changes thoroughly
+
 
 ## 📄 License
 

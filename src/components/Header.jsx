@@ -1,7 +1,7 @@
 // Import Redux
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCategories } from "../features/categories/categoriesSlice";
-import { logout } from "../features/auth/authSlicer";
+import { logoutUser } from "../features/auth/authSlicer";
 // Import Mui
 import SearchIcon from "@mui/icons-material/Search";
 import AlignVerticalCenterIcon from "@mui/icons-material/AlignVerticalCenter";
@@ -18,6 +18,7 @@ import HomeFilledIcon from "@mui/icons-material/HomeFilled";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
+import toast from "react-hot-toast";
 
 // Import Images
 import Logo from "../assets/logo.svg";
@@ -222,7 +223,10 @@ export default function Header() {
                   {isAuth ? (
                     <Link
                       to={"/Login"}
-                      onClick={() => dispatch(logout())}
+                      onClick={() => {
+                        dispatch(logoutUser());
+                        toast.success("Logged out successfully");
+                      }}
                       className="flex gap-2 duration-200 hover:text-green-500 items-center text-sm"
                     >
                       <LogoutIcon fontSize="small" />

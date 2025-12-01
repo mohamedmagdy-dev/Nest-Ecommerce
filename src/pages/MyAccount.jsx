@@ -1,11 +1,12 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import ProtectedRoutes from "../components/ProtectedRoutes";
-import { logout } from "../features/auth/authSlicer";
+import { logoutUser } from "../features/auth/authSlicer";
 import { useDispatch, useSelector } from "react-redux";
 // Mui Icons
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
+import toast from "react-hot-toast";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import RoomIcon from "@mui/icons-material/Room";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -74,7 +75,10 @@ export default function MyAccount() {
           </li>
           <li>
             <Link
-              onClick={() => dispatch(logout())}
+              onClick={() => {
+                dispatch(logoutUser());
+                toast.success("Logged out successfully");
+              }}
               to="/Login"
               className={linkClass("/MyAccount/Login")}
             >
@@ -92,7 +96,9 @@ export default function MyAccount() {
 }
 
 export function Dashboard() {
-  const { name } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
+  const emailName = user?.email ? user.email.split("@")[0] : null;
+  const name = user?.name || emailName || "User";
   return (
     <div className="max-sm:text-center">
       <h3 className="font-bold text-green-400 text-4xl mb-3">Hello {name}</h3>
