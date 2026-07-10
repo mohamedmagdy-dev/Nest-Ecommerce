@@ -167,9 +167,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📫 Contact
 
-**Your Name** - [your-email@example.com](mailto:your-email@example.com)
+**Your Name** - [mohamedmagdyelsayed7@gmail.com](mailto:mohamedmagdyelsayed7@gmail.com)
 
-Project Link: [https://github.com/your-username/Nest-Ecommerce](https://github.com/your-username/Nest-Ecommerce)
+Project Link: [https://github.com/mohamedmagdy-dev/Nest-Ecommerce](https://github.com/mohamedmagdy-dev/Nest-Ecommerce)
 
 ---
 <div align="center">
