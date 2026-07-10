@@ -166,7 +166,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📫 Contact
 
-**Your Name** - [mohamedmagdyelsayed7@gmail.com](mailto:mohamedmagdyelsayed7@gmail.com)
+**Mego** - [mohamedmagdyelsayed7@gmail.com](mailto:mohamedmagdyelsayed7@gmail.com)
 
 Project Link: [https://github.com/mohamedmagdy-dev/Nest-Ecommerce](https://github.com/mohamedmagdy-dev/Nest-Ecommerce)
 
