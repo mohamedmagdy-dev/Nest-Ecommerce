@@ -25,7 +25,7 @@
 > **Note:** Replace the src URLs below with actual paths to your project screenshots.
 
 <div align="center">
-  <img src="/assets/website screens/bg1 (8).png" alt="Home Page" width="800"/>
+  <img src="/public/assets/website screens/bg1 (8).png" alt="Home Page" width="800"/>
   <br/>
   <em>Home Page</em>
 </div>
