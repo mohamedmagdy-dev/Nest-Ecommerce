@@ -25,16 +25,29 @@
 > **Note:** Replace the src URLs below with actual paths to your project screenshots.
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot" alt="Home Page" width="800"/>
+  <img src="/assets/website screens/bg1 (8).png" alt="Home Page" width="800"/>
   <br/>
-  <em>Home Page & Product Sliders</em>
+  <em>Home Page</em>
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://via.placeholder.com/400x300.png?text=Cart+Screenshot" alt="Cart" width="49%"/>
-  <img src="https://via.placeholder.com/400x300.png?text=Auth+Screenshot" alt="Authentication" width="49%"/>
+  <img src="/assets/website screens/bg1 (7).png" alt="Cart" width="49%"/>
+  <img src="/assets/website screens/bg1 (1).png" alt="Authentication" width="49%"/>
+</div>
+
+<div align="center">
+  <img src="/assets/website screens/bg1 (2).png" alt="Home Page" width="800"/>
+  <br/>
+  <em>Offers Page</em>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="/assets/website screens/bg1 (3).png" alt="Products Page" width="49%"/>
+  <img src="/assets/website screens/bg1 (6).png" alt="Wishlist Page" width="49%"/>
 </div>
 
 ## ✨ Features
