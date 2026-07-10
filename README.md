@@ -33,12 +33,12 @@
 <br/>
 
 <div align="center">
-  <img src="/assets/website screens/bg1 (7).png" alt="Cart" width="49%"/>
-  <img src="/assets/website screens/bg1 (1).png" alt="Authentication" width="49%"/>
+  <img src="/public/assets/website screens/bg1 (7).png" alt="Cart" width="49%"/>
+  <img src="/public/assets/website screens/bg1 (1).png" alt="Authentication" width="49%"/>
 </div>
 
 <div align="center">
-  <img src="/assets/website screens/bg1 (2).png" alt="Home Page" width="800"/>
+  <img src="/public/assets/website screens/bg1 (2).png" alt="Home Page" width="800"/>
   <br/>
   <em>Offers Page</em>
 </div>
@@ -46,8 +46,8 @@
 <br/>
 
 <div align="center">
-  <img src="/assets/website screens/bg1 (3).png" alt="Products Page" width="49%"/>
-  <img src="/assets/website screens/bg1 (6).png" alt="Wishlist Page" width="49%"/>
+  <img src="/public/assets/website screens/bg1 (3).png" alt="Products Page" width="49%"/>
+  <img src="/public/assets/website screens/bg1 (6).png" alt="Wishlist Page" width="49%"/>
 </div>
 
 ## ✨ Features
